@@ -1,0 +1,91 @@
+Public Class FormKid
+    Dim num1 As Double
+    Dim num2 As Double
+    Dim historial As Double
+    Dim resultado As Double
+    Dim operacion As String
+
+    Private Sub btn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn1.Click
+        txt1.Text = txt1.Text & 1
+    End Sub
+
+    Private Sub btn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn2.Click
+        txt1.Text = txt1.Text & 2
+    End Sub
+
+    Private Sub btn3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn3.Click
+        txt1.Text = txt1.Text & 3
+    End Sub
+
+    Private Sub btn4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn4.Click
+        txt1.Text = txt1.Text & 4
+    End Sub
+
+    Private Sub btn5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn5.Click
+        txt1.Text = txt1.Text & 5
+    End Sub
+
+    Private Sub btn6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn6.Click
+        txt1.Text = txt1.Text & 6
+    End Sub
+
+    Private Sub btn7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn7.Click
+        txt1.Text = txt1.Text & 7
+    End Sub
+
+    Private Sub btn8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn8.Click
+        txt1.Text = txt1.Text & 8
+    End Sub
+
+    Private Sub btn9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn9.Click
+        txt1.Text = txt1.Text & 9
+    End Sub
+
+    Private Sub btn0_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn0.Click
+        txt1.Text = txt1.Text & 0
+    End Sub
+
+    Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
+        txt1.Clear()
+    End Sub
+
+    Private Sub btnSumar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSumar.Click
+        num1 = Val(txt1.Text)
+        operacion = "+"
+        txt1.Clear()
+    End Sub
+
+    Private Sub btnRestar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRestar.Click
+        num1 = Val(txt1.Text)
+        operacion = "-"
+        txt1.Clear()
+    End Sub
+
+    Private Sub btnMultiplicar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMultiplicar.Click
+        num1 = Val(txt1.Text)
+        operacion = "x"
+        txt1.Clear()
+    End Sub
+
+    Private Sub btnDividir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDividir.Click
+        num1 = Val(txt1.Text)
+        operacion = "/"
+        txt1.Clear()
+    End Sub
+
+    Private Sub btnIgual_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIgual.Click
+        num2 = Val(txt1.Text)
+
+        Select Case (operacion)
+
+            Case "+" : resultado = num1 + num2
+            Case "-" : resultado = num1 - num2
+            Case "x" : resultado = num1 * num2
+            Case "/" : resultado = num1 / num2
+
+        End Select
+
+        txt1.Text = resultado
+
+    End Sub
+End Class
