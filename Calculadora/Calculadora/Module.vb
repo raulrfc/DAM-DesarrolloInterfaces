@@ -2,17 +2,41 @@
 Imports Calculadora.Calculadora
 
 Module Module1
-    Public Sub setOficinaTheme()
+    Public Sub setOficinaTheme(ByVal posicion As Integer) ' Carga el tema de la calculadora de oficina
+        Dim layout As Integer
+
         Calculadora.mayoresMenuItem.Enabled = True
         Calculadora.kidsMenuItem.Enabled = True
         Calculadora.oficinaMenuItem.Enabled = False
+        Calculadora.AgregarToolStripMenuItem.Enabled = True
 
         Calculadora.txt1.Width = 290
 
         Calculadora.panel2.Visible = True
         Calculadora.panel2.Location = New Point(10, 75)
+        Calculadora.mnu.BackColor = Color.SlateGray
+        Calculadora.BackColor = Color.SlateGray
+
+
+        If Calculadora.Panel1.Visible = True And posicion > 1 Then
+            layout = 1
+        ElseIf posicion > 1 Then
+            layout = 2
+        ElseIf Calculadora.Panel1.Visible = True Then
+            layout = 3
+        Else
+            layout = 4
+        End If
+
+        Select Case (layout) 'Según el valor de la variable layout se redimensionará la calculadora a un tamaño u otro
+            Case "1" : Calculadora.Size = New Point(500, 350)
+            Case "2" : Calculadora.Size = New Point(330, 350)
+            Case "3" : Calculadora.Size = New Point(500, 250)
+            Case "4" : Calculadora.Size = New Point(330, 250)
+        End Select
     End Sub
-    Public Sub setMayoresTheme()
+
+    Public Sub setMayoresTheme() ' Carga el tema de la calculadora para mayores
 
         setMayoresLayout()
         setBtnProperties("btnNum", Color.SteelBlue)
@@ -21,28 +45,15 @@ Module Module1
         setBtnProperties2(Calculadora.btnIgual, Color.Snow, 162, 298)
         setBtnProperties2(Calculadora.btnOpDecimal, Color.SeaGreen, 0, 298)
         setBtnProperties2(Calculadora.btnBorrar, Color.Firebrick, 324, 55)
+        Calculadora.BackColor = Color.DarkOliveGreen
+        Calculadora.mnu.BackColor = Color.DarkOliveGreen
 
     End Sub
 
-    Public Sub setMayoresLayout()
-
-        Calculadora.mayoresMenuItem.Enabled = False
-        Calculadora.kidsMenuItem.Enabled = True
-        Calculadora.oficinaMenuItem.Enabled = True
-
-        Calculadora.panel2.Visible = False
-
-        Calculadora.txt1.Width = 400
-
-        Calculadora.btnOpDecimal.Visible = True
-        Calculadora.btnOpRaiz.Visible = True
-        Calculadora.btnOpPercent.Visible = True
-        Calculadora.btnOpSigno.Visible = True
-
-    End Sub
-
-    Public Sub setKidsTheme()
+    Public Sub setKidsTheme() ' Carga el tema de la calculadora para niños
         setKidsLayout()
+
+
 
         setBtnProperties("btnNum", Color.DodgerBlue)
         setBtnProperties2(Calculadora.btnOpSumar, Color.Lime, 243, 55)
@@ -51,18 +62,40 @@ Module Module1
         setBtnProperties2(Calculadora.btnOpDividir, Color.Yellow, 243, 298)
         setBtnProperties2(Calculadora.btnIgual, Color.Snow, 162, 298)
         setBtnProperties2(Calculadora.btnBorrar, Color.Fuchsia, 0, 298)
+        Calculadora.BackColor = Color.LightBlue
+        Calculadora.mnu.BackColor = Color.LightBlue
+    End Sub
+
+    Public Sub setMayoresLayout() ' Prepara la disposición y visibilidad de los botones de la calculadora para mayores
+
+        Calculadora.mayoresMenuItem.Enabled = False
+        Calculadora.kidsMenuItem.Enabled = True
+        Calculadora.oficinaMenuItem.Enabled = True
+        Calculadora.AgregarToolStripMenuItem.Enabled = False
+
+        Calculadora.panel2.Visible = False
+
+        Calculadora.txt1.Width = 400
+        Calculadora.Size = New Point(435, 440)
+
+        Calculadora.btnOpDecimal.Visible = True
+        Calculadora.btnOpRaiz.Visible = True
+        Calculadora.btnOpPercent.Visible = True
+        Calculadora.btnOpSigno.Visible = True
 
     End Sub
 
-    Public Sub setKidsLayout()
+    Public Sub setKidsLayout() ' Prepara la disposición y visibilidad de los botones de la calculadora para niños
 
         Calculadora.mayoresMenuItem.Enabled = True
         Calculadora.kidsMenuItem.Enabled = False
         Calculadora.oficinaMenuItem.Enabled = True
+        Calculadora.AgregarToolStripMenuItem.Enabled = False
 
         Calculadora.panel2.Visible = False
 
         Calculadora.txt1.Width = 318
+        Calculadora.Size = New Point(350, 440)
 
         Calculadora.btnOpDecimal.Visible = False
         Calculadora.btnOpRaiz.Visible = False
@@ -70,18 +103,12 @@ Module Module1
         Calculadora.btnOpSigno.Visible = False
     End Sub
 
-    Public Sub setBtnProperties2(ByRef btn As Button, ByVal backColor As Color, ByVal x As Integer, ByVal y As Integer)
+    Public Sub setBtnProperties2(ByRef btn As Button, ByVal backColor As Color, ByVal x As Integer, ByVal y As Integer) ' Permite cambiar el color y la localización de un botón
         btn.BackColor = backColor
         btn.Location = New Point(x, y)
-        'btn.Size = New Point(anchura, altura)
     End Sub
 
-
-    Public Sub setBtnProperties2(ByRef btn As Button, ByVal backColor As Color)
-        btn.BackColor = backColor
-    End Sub
-
-    Public Sub setBtnProperties(ByVal id As String, ByVal backColor As Color)
+    Public Sub setBtnProperties(ByVal id As String, ByVal backColor As Color) ' Permite cambiar el color de una serie de botones indicando la raíz de los mismos
         For Each Control In Calculadora.panel.Controls
             If Control.GetType = GetType(Button) Then
                 Dim btn = CType(Control, Button)
@@ -89,6 +116,70 @@ Module Module1
                     btn.BackColor = backColor
                 End If
             End If
+        Next
+    End Sub
+
+    Public Sub setHex(ByVal valor As Boolean) ' Habilitará o desabilitará los botones hexadecimales en función del parámetro que se le pase
+        Dim id As String = ""
+        Dim letras() As String = {"A", "B", "C", "D", "E", "F"}
+
+        For Each letra In letras 'Recorremos el string de letras
+            id = "btn" + letra ' Asignamos a la variable "id" la concatenación de btn + una de las letras del array
+            For Each Control In Calculadora.panel2.Controls ' Recorremos los controles del panel 2
+                If Control.GetType = GetType(Button) Then ' Si es un botón definimos la variable "btn" como boton
+                    Dim btn = CType(Control, Button)
+                    If StrComp(btn.Name, id, CompareMethod.Binary) = 0 Then ' Si "btn" comienza por el id definido antes, se habilitará o deshabilitará en función de "valor"
+                        btn.Enabled = valor
+                    End If
+                End If
+            Next
+        Next
+    End Sub
+
+    Public Sub setBinary() ' Habilitará o desabilitará los botones octales en función del parámetro que se le pase
+
+        Dim id As String = ""
+        Dim numeros() As Integer = {9, 8, 7, 6, 5, 4, 3, 2}
+
+        setHex(False)
+
+        For Each num In numeros 'Recorremos el array de numeros
+            id = "btn" + num.ToString ' Asignamos a la variable "id" la concatenación de btn + uno de los números del array
+            For Each Control In Calculadora.panel2.Controls ' Recorremos los controles del panel 2
+                If Control.GetType = GetType(Button) Then ' Si es un botón definimos la variable "btn" como boton
+                    Dim btn = CType(Control, Button)
+                    If btn.Name.StartsWith(id) Then ' Si "btn" comienza por el id definido antes, se habilitará o deshabilitará en función de "valor"
+                        btn.Enabled = False    
+                    End If
+                End If
+            Next
+        Next
+    End Sub
+
+    Public Sub setOctal()
+        setHex(False)
+        setDecimal()
+        Calculadora.btn8.Enabled = False
+        Calculadora.btn9.Enabled = False
+
+    End Sub
+
+    Public Sub setDecimal()
+        Dim id As String = ""
+        Dim numeros() As Integer = {9, 8, 7, 6, 5, 4, 3, 2}
+
+        setHex(False)
+
+        For Each num In numeros 'Recorremos el array de numeros
+            id = "btn" + num.ToString ' Asignamos a la variable "id" la concatenación de btn + uno de los números del array
+            For Each Control In Calculadora.panel2.Controls ' Recorremos los controles del panel 2
+                If Control.GetType = GetType(Button) Then ' Si es un botón definimos la variable "btn" como boton
+                    Dim btn = CType(Control, Button)
+                    If btn.Name.StartsWith(id) Then ' Si "btn" comienza por el id definido antes, se habilitará o deshabilitará en función de "valor"
+                        btn.Enabled = True
+                    End If
+                End If
+            Next
         Next
     End Sub
 
