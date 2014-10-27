@@ -1,17 +1,10 @@
-﻿' PROBLEMAS Y ERRORES
-'   * No captura bien el ENTER
-'   * Paréntesis sin implementar
-'   * No prioriza operaciones (* y / antes que + y -)
-'
-'
-'
-
-Public Class Calculadora
+﻿Public Class Calculadora
     Dim resultado As Decimal = 0 'Define resultado como decimal y lo inicializa a 0
     Dim operandos As Queue(Of Decimal) = New Queue(Of Decimal) 'Crea una lista de decimales que guardará los números que se vayan introduciendo en la calculadora
     Dim operaciones As Queue(Of String) = New Queue(Of String) 'Crea una lista de strings que guardará las operaciones que se vayan introduciendo en la calculadora
     Dim posicion As Integer = 1 ' Define la variable posición para controlar la localización de los botones al integrar los módulos a la calculadora
     Dim flag As String = "dec" ' Variable de control para la conversión numérica inicializada a decimal
+
 
 #Region "Funciones necesarias"
 
@@ -83,15 +76,15 @@ Public Class Calculadora
                 Case "Csc" : resultado = 1 / Math.Sin(resultado * (Math.PI / 180))
                 Case "Sec" : resultado = 1 / Math.Cos(resultado * (Math.PI / 180))
                 Case "Cot" : resultado = 1 / Math.Tan(resultado * (Math.PI / 180))
+                Case "10tox" : resultado = Math.Pow(10, operando)
+                Case "Log" : resultado = Math.Log(resultado)
 
             End Select
         Loop
     End Sub
 
-    Private Sub Calculadora_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-      
-
-        Select Case (e.KeyCode)
+    Private Sub Calculadora_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown ' Éste método permite la entrada por teclado de números y operaciones básicas
+        Select Case (e.KeyCode) ' Selecciona uno u otro caso en función de la tecla que se ha pulsado y entonces la redirige al método adecuado, en caso de que no sea una tecla válida, evita que se muestre en pantalla
             Case Keys.D0, Keys.NumPad0
                 btn0_Click(Me, EventArgs.Empty)
             Case Keys.D1, Keys.NumPad1
@@ -132,23 +125,27 @@ Public Class Calculadora
         e.Handled = True
     End Sub
 
+    
 #End Region
 
 #Region "Menus"
 
-    Private Sub kidsMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kidsMenuItem.Click
+    Private Sub kidsMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kidsMenuItem.Click ' Carga la calculadora para niños
         setKidsTheme()
+        Me.BackgroundImage = Global.Calculadora.My.Resources.Resources.kidsBack
     End Sub
 
-    Private Sub ancianosMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mayoresMenuItem.Click
+    Private Sub ancianosMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mayoresMenuItem.Click ' Carga la calculadora para mayores
         setMayoresTheme()
+        Me.BackgroundImage = Global.Calculadora.My.Resources.Resources.elderBack
     End Sub
 
-    Private Sub oficinaMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles oficinaMenuItem.Click
+    Private Sub oficinaMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles oficinaMenuItem.Click ' Carga la calculadora para oficinas
         setOficinaTheme(posicion)
+        Me.BackgroundImage = Global.Calculadora.My.Resources.Resources.officeBack
     End Sub
 
-    Private Sub TrigonometríaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrigonometríaToolStripMenuItem.Click
+    Private Sub TrigonometríaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrigonometríaToolStripMenuItem.Click ' Carga los botones de funciones trigonométricas
 
         btnSin.Location = New Point(posicion, 136)
         btnSin.Visible = True
@@ -173,7 +170,7 @@ Public Class Calculadora
         posicion = posicion + (2 * 42)
     End Sub
 
-    Private Sub ConstantesMatemáticasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConstantesMatemáticasToolStripMenuItem.Click
+    Private Sub ConstantesMatemáticasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConstantesMatemáticasToolStripMenuItem.Click ' Carga los botones de las constantes matemáticas
         btnPi.Location = New Point(posicion, 136)
         btnPi.Visible = True
         btnConstE.Location = New Point(posicion, 185)
@@ -189,7 +186,7 @@ Public Class Calculadora
         posicion = posicion + 42
     End Sub
 
-    Private Sub ConversiónDivisasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConversiónDivisasToolStripMenuItem.Click
+    Private Sub ConversiónDivisasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConversiónDivisasToolStripMenuItem.Click ' Carga la interfaz para la conversión de divisas
         Panel1.Visible = True
         txtFrom.AutoSize = False
         txtFrom.Size = New Point(100, 30)
@@ -209,7 +206,7 @@ Public Class Calculadora
         ConversiónDivisasToolStripMenuItem.Enabled = False
     End Sub
 
-    Private Sub ConversiónNuméricaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConversiónNuméricaToolStripMenuItem.Click
+    Private Sub ConversiónNuméricaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConversiónNuméricaToolStripMenuItem.Click ' Carga la interfaz para la conversión numérica
         btnA.Location = New Point(posicion, 136)
         btnA.Visible = True
         btnB.Location = New Point(posicion, 168)
@@ -222,7 +219,7 @@ Public Class Calculadora
         btnE.Visible = True
         btnF.Location = New Point(posicion + 42, 200)
         btnF.Visible = True
-        gpb1.Location = New Point(posicion + 84, 136)
+        gpb1.Location = New Point(posicion + 84, 130)
         gpb1.Visible = True
 
         If (Panel1.Visible = True) Then
@@ -368,12 +365,12 @@ Public Class Calculadora
         encolarOperacionYOperando("exp")
     End Sub
 
-    Private Sub btnAbrirPar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAbrirPar.Click
-        ' FALTA IMPLEMENTAR
+    Private Sub btnLn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLn.Click
+        encolarOperacionYOperando("Ln")
     End Sub
 
-    Private Sub btnCerrarPar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrarPar.Click
-        ' FALTA IMPLEMENTAR
+    Private Sub btn10toX_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn10toX.Click
+        encolarOperacionYOperando("10tox")
     End Sub
 
     Private Sub btnBorrarUltimo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrarUltimo.Click
@@ -439,13 +436,13 @@ Public Class Calculadora
         Convertir(cantidad, FromCurrency, ToCurrency)
     End Sub
 #End Region
-   
+
 #Region "Módulo Conversión Numérica"
 
-    Private Sub conversionNumerica(ByVal flag As String, ByVal num As Int32, ByVal target As Integer)
+    Private Sub conversionNumerica(ByVal flag As String, ByVal num As Int32, ByVal target As Integer) ' Método para controlar la conversión numérica de cualquier base
         Select Case (flag)
             Case "bin"
-                num = Convert.ToInt32(txt1.Text, 2)
+                num = Convert.ToInt32(txt1.Text, 2) ' Se convierte el número a base decimal en función de la "flag" recibida
 
             Case "oct"
                 num = Convert.ToInt32(txt1.Text, 8)
@@ -457,7 +454,7 @@ Public Class Calculadora
                 num = Convert.ToInt32(txt1.Text, 16)
 
         End Select
-        txt1.Text = Convert.ToString(num, target)
+        txt1.Text = Convert.ToString(num, target) ' El número decimal se convierte después a la base objetivo
     End Sub
 
     Private Sub rbtnDecimal_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtnDecimal.CheckedChanged
@@ -474,7 +471,6 @@ Public Class Calculadora
     End Sub
 
     Private Sub rbtnBinary_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtnBinary.CheckedChanged
-
         If rbtnBinary.Checked = True Then
             setBinary()
             conversionNumerica(flag, txt1.Text, 2)

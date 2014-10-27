@@ -7,3 +7,12 @@ C:\Users\Raul\Documents\Visual Studio 2010\Projects\Calculadora\Calculadora\obj\
 C:\Users\Raul\Documents\Visual Studio 2010\Projects\Calculadora\Calculadora\obj\x86\Debug\Calculadora.exe
 C:\Users\Raul\Documents\Visual Studio 2010\Projects\Calculadora\Calculadora\obj\x86\Debug\Calculadora.xml
 C:\Users\Raul\Documents\Visual Studio 2010\Projects\Calculadora\Calculadora\obj\x86\Debug\Calculadora.pdb
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\bin\Debug\Calculadora.xml
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\obj\x86\Debug\Calculadora.Calculadora.resources
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\obj\x86\Debug\Calculadora.Resources.resources
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\obj\x86\Debug\Calculadora.vbproj.GenerateResource.Cache
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\obj\x86\Debug\Calculadora.exe
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\obj\x86\Debug\Calculadora.xml
+C:\Users\Niar\Documents\GitHub\Desarrollo-Interfaces\Calculadora\Calculadora\obj\x86\Debug\Calculadora.pdb

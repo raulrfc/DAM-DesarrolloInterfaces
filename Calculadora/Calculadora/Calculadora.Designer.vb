@@ -77,10 +77,10 @@ Partial Class Calculadora
         Me.btnSigno = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnBorrarUltimo = New System.Windows.Forms.Button()
-        Me.btnAbrirPar = New System.Windows.Forms.Button()
+        Me.btnLn = New System.Windows.Forms.Button()
         Me.btnFactorial = New System.Windows.Forms.Button()
         Me.btnUnoEntre = New System.Windows.Forms.Button()
-        Me.btnCerrarPar = New System.Windows.Forms.Button()
+        Me.btn10toX = New System.Windows.Forms.Button()
         Me.btnXtoY = New System.Windows.Forms.Button()
         Me.btnX3 = New System.Windows.Forms.Button()
         Me.btnX2 = New System.Windows.Forms.Button()
@@ -119,12 +119,12 @@ Partial Class Calculadora
         '
         'mnu
         '
-        Me.mnu.BackColor = System.Drawing.Color.LightBlue
+        Me.mnu.BackColor = System.Drawing.Color.WhiteSmoke
         Me.mnu.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mnu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculadoraToolStripMenuItem, Me.AgregarToolStripMenuItem})
         Me.mnu.Location = New System.Drawing.Point(0, 0)
         Me.mnu.Name = "mnu"
-        Me.mnu.Size = New System.Drawing.Size(336, 24)
+        Me.mnu.Size = New System.Drawing.Size(987, 24)
         Me.mnu.TabIndex = 17
         '
         'CalculadoraToolStripMenuItem
@@ -520,10 +520,10 @@ Partial Class Calculadora
         '
         'btn1
         '
-        Me.btn1.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn1.BackColor = System.Drawing.Color.White
         Me.btn1.FlatAppearance.BorderSize = 3
         Me.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn1.ForeColor = System.Drawing.Color.Black
         Me.btn1.Location = New System.Drawing.Point(1, 0)
         Me.btn1.Margin = New System.Windows.Forms.Padding(1)
         Me.btn1.Name = "btn1"
@@ -534,10 +534,10 @@ Partial Class Calculadora
         '
         'btn2
         '
-        Me.btn2.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn2.BackColor = System.Drawing.Color.White
         Me.btn2.FlatAppearance.BorderSize = 3
         Me.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn2.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn2.ForeColor = System.Drawing.Color.Black
         Me.btn2.Location = New System.Drawing.Point(43, 0)
         Me.btn2.Margin = New System.Windows.Forms.Padding(1)
         Me.btn2.Name = "btn2"
@@ -548,10 +548,10 @@ Partial Class Calculadora
         '
         'btn3
         '
-        Me.btn3.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn3.BackColor = System.Drawing.Color.White
         Me.btn3.FlatAppearance.BorderSize = 3
         Me.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn3.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn3.ForeColor = System.Drawing.Color.Black
         Me.btn3.Location = New System.Drawing.Point(85, 0)
         Me.btn3.Margin = New System.Windows.Forms.Padding(1)
         Me.btn3.Name = "btn3"
@@ -562,10 +562,10 @@ Partial Class Calculadora
         '
         'btn4
         '
-        Me.btn4.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn4.BackColor = System.Drawing.Color.White
         Me.btn4.FlatAppearance.BorderSize = 3
         Me.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn4.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn4.ForeColor = System.Drawing.Color.Black
         Me.btn4.Location = New System.Drawing.Point(1, 32)
         Me.btn4.Margin = New System.Windows.Forms.Padding(1)
         Me.btn4.Name = "btn4"
@@ -576,10 +576,10 @@ Partial Class Calculadora
         '
         'btn5
         '
-        Me.btn5.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn5.BackColor = System.Drawing.Color.White
         Me.btn5.FlatAppearance.BorderSize = 3
         Me.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn5.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn5.ForeColor = System.Drawing.Color.Black
         Me.btn5.Location = New System.Drawing.Point(43, 32)
         Me.btn5.Margin = New System.Windows.Forms.Padding(1)
         Me.btn5.Name = "btn5"
@@ -590,10 +590,10 @@ Partial Class Calculadora
         '
         'btn6
         '
-        Me.btn6.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn6.BackColor = System.Drawing.Color.White
         Me.btn6.FlatAppearance.BorderSize = 3
         Me.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn6.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn6.ForeColor = System.Drawing.Color.Black
         Me.btn6.Location = New System.Drawing.Point(85, 32)
         Me.btn6.Margin = New System.Windows.Forms.Padding(1)
         Me.btn6.Name = "btn6"
@@ -604,10 +604,10 @@ Partial Class Calculadora
         '
         'btn7
         '
-        Me.btn7.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn7.BackColor = System.Drawing.Color.White
         Me.btn7.FlatAppearance.BorderSize = 3
         Me.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn7.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn7.ForeColor = System.Drawing.Color.Black
         Me.btn7.Location = New System.Drawing.Point(1, 64)
         Me.btn7.Margin = New System.Windows.Forms.Padding(1)
         Me.btn7.Name = "btn7"
@@ -618,10 +618,10 @@ Partial Class Calculadora
         '
         'btn8
         '
-        Me.btn8.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn8.BackColor = System.Drawing.Color.White
         Me.btn8.FlatAppearance.BorderSize = 3
         Me.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn8.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn8.ForeColor = System.Drawing.Color.Black
         Me.btn8.Location = New System.Drawing.Point(43, 64)
         Me.btn8.Margin = New System.Windows.Forms.Padding(1)
         Me.btn8.Name = "btn8"
@@ -632,10 +632,10 @@ Partial Class Calculadora
         '
         'btn9
         '
-        Me.btn9.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn9.BackColor = System.Drawing.Color.White
         Me.btn9.FlatAppearance.BorderSize = 3
         Me.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn9.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn9.ForeColor = System.Drawing.Color.Black
         Me.btn9.Location = New System.Drawing.Point(85, 64)
         Me.btn9.Margin = New System.Windows.Forms.Padding(1)
         Me.btn9.Name = "btn9"
@@ -646,10 +646,10 @@ Partial Class Calculadora
         '
         'btnDecimal
         '
-        Me.btnDecimal.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnDecimal.BackColor = System.Drawing.Color.Black
         Me.btnDecimal.FlatAppearance.BorderSize = 3
         Me.btnDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnDecimal.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnDecimal.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnDecimal.Location = New System.Drawing.Point(1, 96)
         Me.btnDecimal.Margin = New System.Windows.Forms.Padding(1)
         Me.btnDecimal.Name = "btnDecimal"
@@ -660,10 +660,10 @@ Partial Class Calculadora
         '
         'btn0
         '
-        Me.btn0.BackColor = System.Drawing.Color.SteelBlue
+        Me.btn0.BackColor = System.Drawing.Color.White
         Me.btn0.FlatAppearance.BorderSize = 3
         Me.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn0.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btn0.ForeColor = System.Drawing.Color.Black
         Me.btn0.Location = New System.Drawing.Point(43, 96)
         Me.btn0.Margin = New System.Windows.Forms.Padding(1)
         Me.btn0.Name = "btn0"
@@ -674,10 +674,10 @@ Partial Class Calculadora
         '
         'btnEqual
         '
-        Me.btnEqual.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnEqual.BackColor = System.Drawing.Color.DarkOrange
         Me.btnEqual.FlatAppearance.BorderSize = 3
         Me.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEqual.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnEqual.ForeColor = System.Drawing.Color.Black
         Me.btnEqual.Location = New System.Drawing.Point(85, 96)
         Me.btnEqual.Margin = New System.Windows.Forms.Padding(1)
         Me.btnEqual.Name = "btnEqual"
@@ -688,10 +688,10 @@ Partial Class Calculadora
         '
         'btnSumar
         '
-        Me.btnSumar.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnSumar.BackColor = System.Drawing.Color.Black
         Me.btnSumar.FlatAppearance.BorderSize = 3
         Me.btnSumar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSumar.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnSumar.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnSumar.Location = New System.Drawing.Point(127, 0)
         Me.btnSumar.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSumar.Name = "btnSumar"
@@ -702,10 +702,10 @@ Partial Class Calculadora
         '
         'btnRestar
         '
-        Me.btnRestar.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnRestar.BackColor = System.Drawing.Color.Black
         Me.btnRestar.FlatAppearance.BorderSize = 3
         Me.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnRestar.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnRestar.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnRestar.Location = New System.Drawing.Point(127, 32)
         Me.btnRestar.Margin = New System.Windows.Forms.Padding(1)
         Me.btnRestar.Name = "btnRestar"
@@ -716,10 +716,10 @@ Partial Class Calculadora
         '
         'btnDividir
         '
-        Me.btnDividir.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnDividir.BackColor = System.Drawing.Color.Black
         Me.btnDividir.FlatAppearance.BorderSize = 3
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnDividir.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnDividir.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnDividir.Location = New System.Drawing.Point(127, 96)
         Me.btnDividir.Margin = New System.Windows.Forms.Padding(1)
         Me.btnDividir.Name = "btnDividir"
@@ -730,10 +730,10 @@ Partial Class Calculadora
         '
         'btnMultiplicar
         '
-        Me.btnMultiplicar.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnMultiplicar.BackColor = System.Drawing.Color.Black
         Me.btnMultiplicar.FlatAppearance.BorderSize = 3
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnMultiplicar.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnMultiplicar.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnMultiplicar.Location = New System.Drawing.Point(127, 64)
         Me.btnMultiplicar.Margin = New System.Windows.Forms.Padding(1)
         Me.btnMultiplicar.Name = "btnMultiplicar"
@@ -744,10 +744,10 @@ Partial Class Calculadora
         '
         'btnRaiz
         '
-        Me.btnRaiz.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnRaiz.BackColor = System.Drawing.Color.Black
         Me.btnRaiz.FlatAppearance.BorderSize = 3
         Me.btnRaiz.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnRaiz.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnRaiz.ForeColor = System.Drawing.Color.Cyan
         Me.btnRaiz.Location = New System.Drawing.Point(169, 96)
         Me.btnRaiz.Margin = New System.Windows.Forms.Padding(1)
         Me.btnRaiz.Name = "btnRaiz"
@@ -758,10 +758,10 @@ Partial Class Calculadora
         '
         'btnPercent
         '
-        Me.btnPercent.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnPercent.BackColor = System.Drawing.Color.Black
         Me.btnPercent.FlatAppearance.BorderSize = 3
         Me.btnPercent.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPercent.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnPercent.ForeColor = System.Drawing.Color.Cyan
         Me.btnPercent.Location = New System.Drawing.Point(169, 64)
         Me.btnPercent.Margin = New System.Windows.Forms.Padding(1)
         Me.btnPercent.Name = "btnPercent"
@@ -772,10 +772,10 @@ Partial Class Calculadora
         '
         'btnSigno
         '
-        Me.btnSigno.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnSigno.BackColor = System.Drawing.Color.Black
         Me.btnSigno.FlatAppearance.BorderSize = 3
         Me.btnSigno.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSigno.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnSigno.ForeColor = System.Drawing.Color.Cyan
         Me.btnSigno.Location = New System.Drawing.Point(169, 32)
         Me.btnSigno.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSigno.Name = "btnSigno"
@@ -786,10 +786,10 @@ Partial Class Calculadora
         '
         'btnClear
         '
-        Me.btnClear.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnClear.BackColor = System.Drawing.Color.Black
         Me.btnClear.FlatAppearance.BorderSize = 3
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnClear.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnClear.ForeColor = System.Drawing.Color.Red
         Me.btnClear.Location = New System.Drawing.Point(169, 0)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(1)
         Me.btnClear.Name = "btnClear"
@@ -800,10 +800,10 @@ Partial Class Calculadora
         '
         'btnBorrarUltimo
         '
-        Me.btnBorrarUltimo.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnBorrarUltimo.BackColor = System.Drawing.Color.Black
         Me.btnBorrarUltimo.FlatAppearance.BorderSize = 3
         Me.btnBorrarUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBorrarUltimo.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnBorrarUltimo.ForeColor = System.Drawing.Color.Red
         Me.btnBorrarUltimo.Location = New System.Drawing.Point(211, 0)
         Me.btnBorrarUltimo.Margin = New System.Windows.Forms.Padding(1)
         Me.btnBorrarUltimo.Name = "btnBorrarUltimo"
@@ -812,26 +812,26 @@ Partial Class Calculadora
         Me.btnBorrarUltimo.Text = "<-"
         Me.btnBorrarUltimo.UseVisualStyleBackColor = False
         '
-        'btnAbrirPar
+        'btnLn
         '
-        Me.btnAbrirPar.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnAbrirPar.FlatAppearance.BorderSize = 3
-        Me.btnAbrirPar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAbrirPar.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.btnAbrirPar.Location = New System.Drawing.Point(211, 96)
-        Me.btnAbrirPar.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnAbrirPar.Name = "btnAbrirPar"
-        Me.btnAbrirPar.Size = New System.Drawing.Size(40, 30)
-        Me.btnAbrirPar.TabIndex = 52
-        Me.btnAbrirPar.Text = "("
-        Me.btnAbrirPar.UseVisualStyleBackColor = False
+        Me.btnLn.BackColor = System.Drawing.Color.Black
+        Me.btnLn.FlatAppearance.BorderSize = 3
+        Me.btnLn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLn.ForeColor = System.Drawing.Color.Cyan
+        Me.btnLn.Location = New System.Drawing.Point(211, 96)
+        Me.btnLn.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnLn.Name = "btnLn"
+        Me.btnLn.Size = New System.Drawing.Size(40, 30)
+        Me.btnLn.TabIndex = 52
+        Me.btnLn.Text = "Ln"
+        Me.btnLn.UseVisualStyleBackColor = False
         '
         'btnFactorial
         '
-        Me.btnFactorial.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnFactorial.BackColor = System.Drawing.Color.Black
         Me.btnFactorial.FlatAppearance.BorderSize = 3
         Me.btnFactorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnFactorial.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnFactorial.ForeColor = System.Drawing.Color.Cyan
         Me.btnFactorial.Location = New System.Drawing.Point(211, 64)
         Me.btnFactorial.Margin = New System.Windows.Forms.Padding(1)
         Me.btnFactorial.Name = "btnFactorial"
@@ -842,10 +842,10 @@ Partial Class Calculadora
         '
         'btnUnoEntre
         '
-        Me.btnUnoEntre.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnUnoEntre.BackColor = System.Drawing.Color.Black
         Me.btnUnoEntre.FlatAppearance.BorderSize = 3
         Me.btnUnoEntre.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnUnoEntre.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnUnoEntre.ForeColor = System.Drawing.Color.Cyan
         Me.btnUnoEntre.Location = New System.Drawing.Point(211, 32)
         Me.btnUnoEntre.Margin = New System.Windows.Forms.Padding(1)
         Me.btnUnoEntre.Name = "btnUnoEntre"
@@ -854,26 +854,26 @@ Partial Class Calculadora
         Me.btnUnoEntre.Text = "1/x"
         Me.btnUnoEntre.UseVisualStyleBackColor = False
         '
-        'btnCerrarPar
+        'btn10toX
         '
-        Me.btnCerrarPar.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnCerrarPar.FlatAppearance.BorderSize = 3
-        Me.btnCerrarPar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCerrarPar.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.btnCerrarPar.Location = New System.Drawing.Point(253, 96)
-        Me.btnCerrarPar.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnCerrarPar.Name = "btnCerrarPar"
-        Me.btnCerrarPar.Size = New System.Drawing.Size(40, 30)
-        Me.btnCerrarPar.TabIndex = 55
-        Me.btnCerrarPar.Text = ")"
-        Me.btnCerrarPar.UseVisualStyleBackColor = False
+        Me.btn10toX.BackColor = System.Drawing.Color.Black
+        Me.btn10toX.FlatAppearance.BorderSize = 3
+        Me.btn10toX.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn10toX.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.btn10toX.Location = New System.Drawing.Point(253, 96)
+        Me.btn10toX.Margin = New System.Windows.Forms.Padding(1)
+        Me.btn10toX.Name = "btn10toX"
+        Me.btn10toX.Size = New System.Drawing.Size(40, 30)
+        Me.btn10toX.TabIndex = 55
+        Me.btn10toX.Text = "10^x"
+        Me.btn10toX.UseVisualStyleBackColor = False
         '
         'btnXtoY
         '
-        Me.btnXtoY.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnXtoY.BackColor = System.Drawing.Color.Black
         Me.btnXtoY.FlatAppearance.BorderSize = 3
         Me.btnXtoY.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnXtoY.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnXtoY.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btnXtoY.Location = New System.Drawing.Point(253, 64)
         Me.btnXtoY.Margin = New System.Windows.Forms.Padding(1)
         Me.btnXtoY.Name = "btnXtoY"
@@ -884,10 +884,10 @@ Partial Class Calculadora
         '
         'btnX3
         '
-        Me.btnX3.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnX3.BackColor = System.Drawing.Color.Black
         Me.btnX3.FlatAppearance.BorderSize = 3
         Me.btnX3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnX3.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnX3.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btnX3.Location = New System.Drawing.Point(253, 32)
         Me.btnX3.Margin = New System.Windows.Forms.Padding(1)
         Me.btnX3.Name = "btnX3"
@@ -898,10 +898,10 @@ Partial Class Calculadora
         '
         'btnX2
         '
-        Me.btnX2.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnX2.BackColor = System.Drawing.Color.Black
         Me.btnX2.FlatAppearance.BorderSize = 3
         Me.btnX2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnX2.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnX2.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btnX2.Location = New System.Drawing.Point(253, 0)
         Me.btnX2.Margin = New System.Windows.Forms.Padding(1)
         Me.btnX2.Name = "btnX2"
@@ -912,10 +912,10 @@ Partial Class Calculadora
         '
         'btnConstE
         '
-        Me.btnConstE.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnConstE.BackColor = System.Drawing.Color.Black
         Me.btnConstE.FlatAppearance.BorderSize = 3
         Me.btnConstE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnConstE.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnConstE.ForeColor = System.Drawing.Color.Lime
         Me.btnConstE.Location = New System.Drawing.Point(85, 185)
         Me.btnConstE.Margin = New System.Windows.Forms.Padding(1)
         Me.btnConstE.Name = "btnConstE"
@@ -927,10 +927,10 @@ Partial Class Calculadora
         '
         'btnPi
         '
-        Me.btnPi.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnPi.BackColor = System.Drawing.Color.Black
         Me.btnPi.FlatAppearance.BorderSize = 3
         Me.btnPi.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPi.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnPi.ForeColor = System.Drawing.Color.Lime
         Me.btnPi.Location = New System.Drawing.Point(85, 136)
         Me.btnPi.Margin = New System.Windows.Forms.Padding(1)
         Me.btnPi.Name = "btnPi"
@@ -955,10 +955,10 @@ Partial Class Calculadora
         '
         'btnConvertir
         '
-        Me.btnConvertir.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnConvertir.BackColor = System.Drawing.Color.Black
         Me.btnConvertir.FlatAppearance.BorderSize = 3
         Me.btnConvertir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnConvertir.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnConvertir.ForeColor = System.Drawing.Color.Gold
         Me.btnConvertir.Location = New System.Drawing.Point(3, 66)
         Me.btnConvertir.Margin = New System.Windows.Forms.Padding(1)
         Me.btnConvertir.Name = "btnConvertir"
@@ -1003,10 +1003,10 @@ Partial Class Calculadora
         '
         'btnC
         '
-        Me.btnC.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnC.BackColor = System.Drawing.Color.Black
         Me.btnC.FlatAppearance.BorderSize = 3
         Me.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnC.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnC.ForeColor = System.Drawing.Color.Lime
         Me.btnC.Location = New System.Drawing.Point(127, 200)
         Me.btnC.Margin = New System.Windows.Forms.Padding(1)
         Me.btnC.Name = "btnC"
@@ -1018,10 +1018,10 @@ Partial Class Calculadora
         '
         'btnB
         '
-        Me.btnB.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnB.BackColor = System.Drawing.Color.Black
         Me.btnB.FlatAppearance.BorderSize = 3
         Me.btnB.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnB.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnB.ForeColor = System.Drawing.Color.Lime
         Me.btnB.Location = New System.Drawing.Point(127, 168)
         Me.btnB.Margin = New System.Windows.Forms.Padding(1)
         Me.btnB.Name = "btnB"
@@ -1033,10 +1033,10 @@ Partial Class Calculadora
         '
         'btnA
         '
-        Me.btnA.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnA.BackColor = System.Drawing.Color.Black
         Me.btnA.FlatAppearance.BorderSize = 3
         Me.btnA.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnA.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnA.ForeColor = System.Drawing.Color.Lime
         Me.btnA.Location = New System.Drawing.Point(127, 136)
         Me.btnA.Margin = New System.Windows.Forms.Padding(1)
         Me.btnA.Name = "btnA"
@@ -1048,10 +1048,10 @@ Partial Class Calculadora
         '
         'btnF
         '
-        Me.btnF.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnF.BackColor = System.Drawing.Color.Black
         Me.btnF.FlatAppearance.BorderSize = 3
         Me.btnF.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnF.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnF.ForeColor = System.Drawing.Color.Lime
         Me.btnF.Location = New System.Drawing.Point(169, 200)
         Me.btnF.Margin = New System.Windows.Forms.Padding(1)
         Me.btnF.Name = "btnF"
@@ -1063,10 +1063,10 @@ Partial Class Calculadora
         '
         'btnSec
         '
-        Me.btnSec.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnSec.BackColor = System.Drawing.Color.Black
         Me.btnSec.FlatAppearance.BorderSize = 3
         Me.btnSec.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSec.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnSec.ForeColor = System.Drawing.Color.Lime
         Me.btnSec.Location = New System.Drawing.Point(43, 168)
         Me.btnSec.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSec.Name = "btnSec"
@@ -1078,10 +1078,10 @@ Partial Class Calculadora
         '
         'btnE
         '
-        Me.btnE.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnE.BackColor = System.Drawing.Color.Black
         Me.btnE.FlatAppearance.BorderSize = 3
         Me.btnE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnE.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnE.ForeColor = System.Drawing.Color.Lime
         Me.btnE.Location = New System.Drawing.Point(169, 168)
         Me.btnE.Margin = New System.Windows.Forms.Padding(1)
         Me.btnE.Name = "btnE"
@@ -1093,10 +1093,10 @@ Partial Class Calculadora
         '
         'btnCot
         '
-        Me.btnCot.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnCot.BackColor = System.Drawing.Color.Black
         Me.btnCot.FlatAppearance.BorderSize = 3
         Me.btnCot.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCot.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnCot.ForeColor = System.Drawing.Color.Lime
         Me.btnCot.Location = New System.Drawing.Point(43, 200)
         Me.btnCot.Margin = New System.Windows.Forms.Padding(1)
         Me.btnCot.Name = "btnCot"
@@ -1108,10 +1108,10 @@ Partial Class Calculadora
         '
         'btnD
         '
-        Me.btnD.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnD.BackColor = System.Drawing.Color.Black
         Me.btnD.FlatAppearance.BorderSize = 3
         Me.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnD.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnD.ForeColor = System.Drawing.Color.Lime
         Me.btnD.Location = New System.Drawing.Point(169, 136)
         Me.btnD.Margin = New System.Windows.Forms.Padding(1)
         Me.btnD.Name = "btnD"
@@ -1123,10 +1123,10 @@ Partial Class Calculadora
         '
         'btnSin
         '
-        Me.btnSin.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnSin.BackColor = System.Drawing.Color.Black
         Me.btnSin.FlatAppearance.BorderSize = 3
         Me.btnSin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSin.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnSin.ForeColor = System.Drawing.Color.Lime
         Me.btnSin.Location = New System.Drawing.Point(1, 136)
         Me.btnSin.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSin.Name = "btnSin"
@@ -1138,11 +1138,11 @@ Partial Class Calculadora
         '
         'gpb1
         '
+        Me.gpb1.BackColor = System.Drawing.Color.Transparent
         Me.gpb1.Controls.Add(Me.rbtnHex)
         Me.gpb1.Controls.Add(Me.rbtnOctal)
         Me.gpb1.Controls.Add(Me.rbtnBinary)
         Me.gpb1.Controls.Add(Me.rbtnDecimal)
-        Me.gpb1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gpb1.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.gpb1.Location = New System.Drawing.Point(211, 130)
         Me.gpb1.Name = "gpb1"
@@ -1154,7 +1154,7 @@ Partial Class Calculadora
         'rbtnHex
         '
         Me.rbtnHex.AutoSize = True
-        Me.rbtnHex.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.rbtnHex.ForeColor = System.Drawing.Color.Lime
         Me.rbtnHex.Location = New System.Drawing.Point(3, 74)
         Me.rbtnHex.Name = "rbtnHex"
         Me.rbtnHex.Size = New System.Drawing.Size(49, 17)
@@ -1166,7 +1166,7 @@ Partial Class Calculadora
         'rbtnOctal
         '
         Me.rbtnOctal.AutoSize = True
-        Me.rbtnOctal.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.rbtnOctal.ForeColor = System.Drawing.Color.Lime
         Me.rbtnOctal.Location = New System.Drawing.Point(3, 51)
         Me.rbtnOctal.Name = "rbtnOctal"
         Me.rbtnOctal.Size = New System.Drawing.Size(55, 17)
@@ -1178,7 +1178,7 @@ Partial Class Calculadora
         'rbtnBinary
         '
         Me.rbtnBinary.AutoSize = True
-        Me.rbtnBinary.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.rbtnBinary.ForeColor = System.Drawing.Color.Lime
         Me.rbtnBinary.Location = New System.Drawing.Point(3, 29)
         Me.rbtnBinary.Name = "rbtnBinary"
         Me.rbtnBinary.Size = New System.Drawing.Size(67, 17)
@@ -1190,7 +1190,7 @@ Partial Class Calculadora
         'rbtnDecimal
         '
         Me.rbtnDecimal.AutoSize = True
-        Me.rbtnDecimal.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.rbtnDecimal.ForeColor = System.Drawing.Color.Lime
         Me.rbtnDecimal.Location = New System.Drawing.Point(3, 6)
         Me.rbtnDecimal.Name = "rbtnDecimal"
         Me.rbtnDecimal.Size = New System.Drawing.Size(67, 17)
@@ -1201,10 +1201,10 @@ Partial Class Calculadora
         '
         'btnCos
         '
-        Me.btnCos.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnCos.BackColor = System.Drawing.Color.Black
         Me.btnCos.FlatAppearance.BorderSize = 3
         Me.btnCos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCos.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnCos.ForeColor = System.Drawing.Color.Lime
         Me.btnCos.Location = New System.Drawing.Point(1, 168)
         Me.btnCos.Margin = New System.Windows.Forms.Padding(1)
         Me.btnCos.Name = "btnCos"
@@ -1216,10 +1216,10 @@ Partial Class Calculadora
         '
         'btnTan
         '
-        Me.btnTan.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnTan.BackColor = System.Drawing.Color.Black
         Me.btnTan.FlatAppearance.BorderSize = 3
         Me.btnTan.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnTan.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnTan.ForeColor = System.Drawing.Color.Lime
         Me.btnTan.Location = New System.Drawing.Point(1, 200)
         Me.btnTan.Margin = New System.Windows.Forms.Padding(1)
         Me.btnTan.Name = "btnTan"
@@ -1231,10 +1231,10 @@ Partial Class Calculadora
         '
         'btnCsc
         '
-        Me.btnCsc.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnCsc.BackColor = System.Drawing.Color.Black
         Me.btnCsc.FlatAppearance.BorderSize = 3
         Me.btnCsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCsc.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnCsc.ForeColor = System.Drawing.Color.Lime
         Me.btnCsc.Location = New System.Drawing.Point(43, 136)
         Me.btnCsc.Margin = New System.Windows.Forms.Padding(1)
         Me.btnCsc.Name = "btnCsc"
@@ -1267,10 +1267,10 @@ Partial Class Calculadora
         Me.panel2.Controls.Add(Me.btnX2)
         Me.panel2.Controls.Add(Me.btnX3)
         Me.panel2.Controls.Add(Me.btnXtoY)
-        Me.panel2.Controls.Add(Me.btnCerrarPar)
+        Me.panel2.Controls.Add(Me.btn10toX)
         Me.panel2.Controls.Add(Me.btnUnoEntre)
         Me.panel2.Controls.Add(Me.btnFactorial)
-        Me.panel2.Controls.Add(Me.btnAbrirPar)
+        Me.panel2.Controls.Add(Me.btnLn)
         Me.panel2.Controls.Add(Me.btnBorrarUltimo)
         Me.panel2.Controls.Add(Me.btnClear)
         Me.panel2.Controls.Add(Me.btnSigno)
@@ -1306,7 +1306,8 @@ Partial Class Calculadora
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(336, 427)
+        Me.BackgroundImage = Global.Calculadora.My.Resources.Resources.kidsBack
+        Me.ClientSize = New System.Drawing.Size(987, 427)
         Me.Controls.Add(Me.panel2)
         Me.Controls.Add(Me.panel)
         Me.Controls.Add(Me.mnu)
@@ -1383,10 +1384,10 @@ Partial Class Calculadora
     Friend WithEvents btnSigno As System.Windows.Forms.Button
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnBorrarUltimo As System.Windows.Forms.Button
-    Friend WithEvents btnAbrirPar As System.Windows.Forms.Button
+    Friend WithEvents btnLn As System.Windows.Forms.Button
     Friend WithEvents btnFactorial As System.Windows.Forms.Button
     Friend WithEvents btnUnoEntre As System.Windows.Forms.Button
-    Friend WithEvents btnCerrarPar As System.Windows.Forms.Button
+    Friend WithEvents btn10toX As System.Windows.Forms.Button
     Friend WithEvents btnXtoY As System.Windows.Forms.Button
     Friend WithEvents btnX3 As System.Windows.Forms.Button
     Friend WithEvents btnX2 As System.Windows.Forms.Button

@@ -15,6 +15,18 @@ Calculadora
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
 </summary>
+</member><member name="P:Calculadora.My.Resources.Resources.elderBack">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Calculadora.My.Resources.Resources.kidsBack">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Calculadora.My.Resources.Resources.officeBack">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="T:Calculadora.My.Resources.Resources">
 	<summary>
   Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
