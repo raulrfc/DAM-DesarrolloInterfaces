@@ -4,7 +4,6 @@ Imports Calculadora.Calculadora
 Module Module1
     Public Sub setOficinaTheme(ByVal posicion As Integer) ' Carga el tema de la calculadora de oficina
         Dim layout As Integer
-
         Calculadora.mayoresMenuItem.Enabled = True
         Calculadora.kidsMenuItem.Enabled = True
         Calculadora.oficinaMenuItem.Enabled = False
@@ -42,16 +41,20 @@ Module Module1
                 Calculadora.txt1.Width = 290
         End Select
     End Sub
-
+    Public Sub setMayoresSound()
+        If (Calculadora.mayoresMenuItem.Enabled = False) Then
+            Beep()
+        End If
+    End Sub
     Public Sub setMayoresTheme() ' Carga el tema de la calculadora para mayores
 
         setMayoresLayout()
-        setBtnProperties("btnNum", Color.SteelBlue)
-        setBtnProperties("btnOp", Color.SeaGreen)
+        setBtnProperties("btnNum", Color.IndianRed)
+        setBtnProperties("btnOp", Color.MediumSlateBlue)
 
         setBtnProperties2(Calculadora.btnIgual, Color.Snow, 162, 298)
-        setBtnProperties2(Calculadora.btnOpDecimal, Color.SeaGreen, 0, 298)
-        setBtnProperties2(Calculadora.btnBorrar, Color.Firebrick, 324, 55)
+        setBtnProperties2(Calculadora.btnOpDecimal, Color.Gold, 0, 298)
+        setBtnProperties2(Calculadora.btnBorrar, Color.Violet, 324, 55)
         Calculadora.BackColor = Color.DarkOliveGreen
 
 

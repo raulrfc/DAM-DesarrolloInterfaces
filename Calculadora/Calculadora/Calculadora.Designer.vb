@@ -405,7 +405,7 @@ Partial Class Calculadora
         '
         'btnOpSigno
         '
-        Me.btnOpSigno.BackColor = System.Drawing.Color.Brown
+        Me.btnOpSigno.BackColor = System.Drawing.Color.IndianRed
         Me.btnOpSigno.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnOpSigno.FlatAppearance.BorderSize = 2
         Me.btnOpSigno.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -523,6 +523,7 @@ Partial Class Calculadora
         Me.btn1.BackColor = System.Drawing.Color.White
         Me.btn1.FlatAppearance.BorderSize = 3
         Me.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn1.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1.ForeColor = System.Drawing.Color.Black
         Me.btn1.Location = New System.Drawing.Point(1, 0)
         Me.btn1.Margin = New System.Windows.Forms.Padding(1)
@@ -537,6 +538,7 @@ Partial Class Calculadora
         Me.btn2.BackColor = System.Drawing.Color.White
         Me.btn2.FlatAppearance.BorderSize = 3
         Me.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn2.ForeColor = System.Drawing.Color.Black
         Me.btn2.Location = New System.Drawing.Point(43, 0)
         Me.btn2.Margin = New System.Windows.Forms.Padding(1)
@@ -551,6 +553,7 @@ Partial Class Calculadora
         Me.btn3.BackColor = System.Drawing.Color.White
         Me.btn3.FlatAppearance.BorderSize = 3
         Me.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn3.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn3.ForeColor = System.Drawing.Color.Black
         Me.btn3.Location = New System.Drawing.Point(85, 0)
         Me.btn3.Margin = New System.Windows.Forms.Padding(1)
@@ -565,6 +568,7 @@ Partial Class Calculadora
         Me.btn4.BackColor = System.Drawing.Color.White
         Me.btn4.FlatAppearance.BorderSize = 3
         Me.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn4.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn4.ForeColor = System.Drawing.Color.Black
         Me.btn4.Location = New System.Drawing.Point(1, 32)
         Me.btn4.Margin = New System.Windows.Forms.Padding(1)
@@ -579,6 +583,7 @@ Partial Class Calculadora
         Me.btn5.BackColor = System.Drawing.Color.White
         Me.btn5.FlatAppearance.BorderSize = 3
         Me.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn5.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn5.ForeColor = System.Drawing.Color.Black
         Me.btn5.Location = New System.Drawing.Point(43, 32)
         Me.btn5.Margin = New System.Windows.Forms.Padding(1)
@@ -593,6 +598,7 @@ Partial Class Calculadora
         Me.btn6.BackColor = System.Drawing.Color.White
         Me.btn6.FlatAppearance.BorderSize = 3
         Me.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn6.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn6.ForeColor = System.Drawing.Color.Black
         Me.btn6.Location = New System.Drawing.Point(85, 32)
         Me.btn6.Margin = New System.Windows.Forms.Padding(1)
@@ -607,6 +613,7 @@ Partial Class Calculadora
         Me.btn7.BackColor = System.Drawing.Color.White
         Me.btn7.FlatAppearance.BorderSize = 3
         Me.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn7.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn7.ForeColor = System.Drawing.Color.Black
         Me.btn7.Location = New System.Drawing.Point(1, 64)
         Me.btn7.Margin = New System.Windows.Forms.Padding(1)
@@ -621,6 +628,7 @@ Partial Class Calculadora
         Me.btn8.BackColor = System.Drawing.Color.White
         Me.btn8.FlatAppearance.BorderSize = 3
         Me.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn8.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn8.ForeColor = System.Drawing.Color.Black
         Me.btn8.Location = New System.Drawing.Point(43, 64)
         Me.btn8.Margin = New System.Windows.Forms.Padding(1)
@@ -635,6 +643,7 @@ Partial Class Calculadora
         Me.btn9.BackColor = System.Drawing.Color.White
         Me.btn9.FlatAppearance.BorderSize = 3
         Me.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn9.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn9.ForeColor = System.Drawing.Color.Black
         Me.btn9.Location = New System.Drawing.Point(85, 64)
         Me.btn9.Margin = New System.Windows.Forms.Padding(1)
@@ -649,6 +658,7 @@ Partial Class Calculadora
         Me.btnDecimal.BackColor = System.Drawing.Color.Black
         Me.btnDecimal.FlatAppearance.BorderSize = 3
         Me.btnDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDecimal.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDecimal.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnDecimal.Location = New System.Drawing.Point(1, 96)
         Me.btnDecimal.Margin = New System.Windows.Forms.Padding(1)
@@ -663,6 +673,7 @@ Partial Class Calculadora
         Me.btn0.BackColor = System.Drawing.Color.White
         Me.btn0.FlatAppearance.BorderSize = 3
         Me.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn0.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn0.ForeColor = System.Drawing.Color.Black
         Me.btn0.Location = New System.Drawing.Point(43, 96)
         Me.btn0.Margin = New System.Windows.Forms.Padding(1)
@@ -677,6 +688,7 @@ Partial Class Calculadora
         Me.btnEqual.BackColor = System.Drawing.Color.DarkOrange
         Me.btnEqual.FlatAppearance.BorderSize = 3
         Me.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEqual.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEqual.ForeColor = System.Drawing.Color.Black
         Me.btnEqual.Location = New System.Drawing.Point(85, 96)
         Me.btnEqual.Margin = New System.Windows.Forms.Padding(1)
@@ -691,6 +703,7 @@ Partial Class Calculadora
         Me.btnSumar.BackColor = System.Drawing.Color.Black
         Me.btnSumar.FlatAppearance.BorderSize = 3
         Me.btnSumar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSumar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSumar.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnSumar.Location = New System.Drawing.Point(127, 0)
         Me.btnSumar.Margin = New System.Windows.Forms.Padding(1)
@@ -705,6 +718,7 @@ Partial Class Calculadora
         Me.btnRestar.BackColor = System.Drawing.Color.Black
         Me.btnRestar.FlatAppearance.BorderSize = 3
         Me.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnRestar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestar.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnRestar.Location = New System.Drawing.Point(127, 32)
         Me.btnRestar.Margin = New System.Windows.Forms.Padding(1)
@@ -719,6 +733,7 @@ Partial Class Calculadora
         Me.btnDividir.BackColor = System.Drawing.Color.Black
         Me.btnDividir.FlatAppearance.BorderSize = 3
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDividir.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDividir.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnDividir.Location = New System.Drawing.Point(127, 96)
         Me.btnDividir.Margin = New System.Windows.Forms.Padding(1)
@@ -733,6 +748,7 @@ Partial Class Calculadora
         Me.btnMultiplicar.BackColor = System.Drawing.Color.Black
         Me.btnMultiplicar.FlatAppearance.BorderSize = 3
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnMultiplicar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMultiplicar.ForeColor = System.Drawing.Color.DarkOrange
         Me.btnMultiplicar.Location = New System.Drawing.Point(127, 64)
         Me.btnMultiplicar.Margin = New System.Windows.Forms.Padding(1)
@@ -747,6 +763,7 @@ Partial Class Calculadora
         Me.btnRaiz.BackColor = System.Drawing.Color.Black
         Me.btnRaiz.FlatAppearance.BorderSize = 3
         Me.btnRaiz.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnRaiz.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRaiz.ForeColor = System.Drawing.Color.Cyan
         Me.btnRaiz.Location = New System.Drawing.Point(169, 96)
         Me.btnRaiz.Margin = New System.Windows.Forms.Padding(1)
@@ -761,6 +778,7 @@ Partial Class Calculadora
         Me.btnPercent.BackColor = System.Drawing.Color.Black
         Me.btnPercent.FlatAppearance.BorderSize = 3
         Me.btnPercent.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPercent.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPercent.ForeColor = System.Drawing.Color.Cyan
         Me.btnPercent.Location = New System.Drawing.Point(169, 64)
         Me.btnPercent.Margin = New System.Windows.Forms.Padding(1)
@@ -775,6 +793,7 @@ Partial Class Calculadora
         Me.btnSigno.BackColor = System.Drawing.Color.Black
         Me.btnSigno.FlatAppearance.BorderSize = 3
         Me.btnSigno.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSigno.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSigno.ForeColor = System.Drawing.Color.Cyan
         Me.btnSigno.Location = New System.Drawing.Point(169, 32)
         Me.btnSigno.Margin = New System.Windows.Forms.Padding(1)
@@ -789,6 +808,7 @@ Partial Class Calculadora
         Me.btnClear.BackColor = System.Drawing.Color.Black
         Me.btnClear.FlatAppearance.BorderSize = 3
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.Red
         Me.btnClear.Location = New System.Drawing.Point(169, 0)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(1)
@@ -803,6 +823,7 @@ Partial Class Calculadora
         Me.btnBorrarUltimo.BackColor = System.Drawing.Color.Black
         Me.btnBorrarUltimo.FlatAppearance.BorderSize = 3
         Me.btnBorrarUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBorrarUltimo.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBorrarUltimo.ForeColor = System.Drawing.Color.Red
         Me.btnBorrarUltimo.Location = New System.Drawing.Point(211, 0)
         Me.btnBorrarUltimo.Margin = New System.Windows.Forms.Padding(1)
@@ -817,6 +838,7 @@ Partial Class Calculadora
         Me.btnLn.BackColor = System.Drawing.Color.Black
         Me.btnLn.FlatAppearance.BorderSize = 3
         Me.btnLn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLn.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLn.ForeColor = System.Drawing.Color.Cyan
         Me.btnLn.Location = New System.Drawing.Point(211, 96)
         Me.btnLn.Margin = New System.Windows.Forms.Padding(1)
@@ -831,6 +853,7 @@ Partial Class Calculadora
         Me.btnFactorial.BackColor = System.Drawing.Color.Black
         Me.btnFactorial.FlatAppearance.BorderSize = 3
         Me.btnFactorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnFactorial.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFactorial.ForeColor = System.Drawing.Color.Cyan
         Me.btnFactorial.Location = New System.Drawing.Point(211, 64)
         Me.btnFactorial.Margin = New System.Windows.Forms.Padding(1)
@@ -845,6 +868,7 @@ Partial Class Calculadora
         Me.btnUnoEntre.BackColor = System.Drawing.Color.Black
         Me.btnUnoEntre.FlatAppearance.BorderSize = 3
         Me.btnUnoEntre.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnUnoEntre.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUnoEntre.ForeColor = System.Drawing.Color.Cyan
         Me.btnUnoEntre.Location = New System.Drawing.Point(211, 32)
         Me.btnUnoEntre.Margin = New System.Windows.Forms.Padding(1)
@@ -859,6 +883,7 @@ Partial Class Calculadora
         Me.btn10toX.BackColor = System.Drawing.Color.Black
         Me.btn10toX.FlatAppearance.BorderSize = 3
         Me.btn10toX.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn10toX.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn10toX.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btn10toX.Location = New System.Drawing.Point(253, 96)
         Me.btn10toX.Margin = New System.Windows.Forms.Padding(1)
@@ -873,6 +898,7 @@ Partial Class Calculadora
         Me.btnXtoY.BackColor = System.Drawing.Color.Black
         Me.btnXtoY.FlatAppearance.BorderSize = 3
         Me.btnXtoY.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnXtoY.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnXtoY.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btnXtoY.Location = New System.Drawing.Point(253, 64)
         Me.btnXtoY.Margin = New System.Windows.Forms.Padding(1)
@@ -887,6 +913,7 @@ Partial Class Calculadora
         Me.btnX3.BackColor = System.Drawing.Color.Black
         Me.btnX3.FlatAppearance.BorderSize = 3
         Me.btnX3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnX3.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnX3.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btnX3.Location = New System.Drawing.Point(253, 32)
         Me.btnX3.Margin = New System.Windows.Forms.Padding(1)
@@ -901,6 +928,7 @@ Partial Class Calculadora
         Me.btnX2.BackColor = System.Drawing.Color.Black
         Me.btnX2.FlatAppearance.BorderSize = 3
         Me.btnX2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnX2.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnX2.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.btnX2.Location = New System.Drawing.Point(253, 0)
         Me.btnX2.Margin = New System.Windows.Forms.Padding(1)
@@ -915,6 +943,7 @@ Partial Class Calculadora
         Me.btnConstE.BackColor = System.Drawing.Color.Black
         Me.btnConstE.FlatAppearance.BorderSize = 3
         Me.btnConstE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnConstE.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConstE.ForeColor = System.Drawing.Color.Lime
         Me.btnConstE.Location = New System.Drawing.Point(85, 185)
         Me.btnConstE.Margin = New System.Windows.Forms.Padding(1)
@@ -930,6 +959,7 @@ Partial Class Calculadora
         Me.btnPi.BackColor = System.Drawing.Color.Black
         Me.btnPi.FlatAppearance.BorderSize = 3
         Me.btnPi.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPi.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPi.ForeColor = System.Drawing.Color.Lime
         Me.btnPi.Location = New System.Drawing.Point(85, 136)
         Me.btnPi.Margin = New System.Windows.Forms.Padding(1)
@@ -958,6 +988,7 @@ Partial Class Calculadora
         Me.btnConvertir.BackColor = System.Drawing.Color.Black
         Me.btnConvertir.FlatAppearance.BorderSize = 3
         Me.btnConvertir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnConvertir.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConvertir.ForeColor = System.Drawing.Color.Gold
         Me.btnConvertir.Location = New System.Drawing.Point(3, 66)
         Me.btnConvertir.Margin = New System.Windows.Forms.Padding(1)
@@ -1006,6 +1037,7 @@ Partial Class Calculadora
         Me.btnC.BackColor = System.Drawing.Color.Black
         Me.btnC.FlatAppearance.BorderSize = 3
         Me.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnC.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnC.ForeColor = System.Drawing.Color.Lime
         Me.btnC.Location = New System.Drawing.Point(127, 200)
         Me.btnC.Margin = New System.Windows.Forms.Padding(1)
@@ -1021,6 +1053,7 @@ Partial Class Calculadora
         Me.btnB.BackColor = System.Drawing.Color.Black
         Me.btnB.FlatAppearance.BorderSize = 3
         Me.btnB.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnB.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnB.ForeColor = System.Drawing.Color.Lime
         Me.btnB.Location = New System.Drawing.Point(127, 168)
         Me.btnB.Margin = New System.Windows.Forms.Padding(1)
@@ -1036,6 +1069,7 @@ Partial Class Calculadora
         Me.btnA.BackColor = System.Drawing.Color.Black
         Me.btnA.FlatAppearance.BorderSize = 3
         Me.btnA.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnA.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnA.ForeColor = System.Drawing.Color.Lime
         Me.btnA.Location = New System.Drawing.Point(127, 136)
         Me.btnA.Margin = New System.Windows.Forms.Padding(1)
@@ -1051,6 +1085,7 @@ Partial Class Calculadora
         Me.btnF.BackColor = System.Drawing.Color.Black
         Me.btnF.FlatAppearance.BorderSize = 3
         Me.btnF.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnF.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnF.ForeColor = System.Drawing.Color.Lime
         Me.btnF.Location = New System.Drawing.Point(169, 200)
         Me.btnF.Margin = New System.Windows.Forms.Padding(1)
@@ -1066,6 +1101,7 @@ Partial Class Calculadora
         Me.btnSec.BackColor = System.Drawing.Color.Black
         Me.btnSec.FlatAppearance.BorderSize = 3
         Me.btnSec.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSec.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSec.ForeColor = System.Drawing.Color.Lime
         Me.btnSec.Location = New System.Drawing.Point(43, 168)
         Me.btnSec.Margin = New System.Windows.Forms.Padding(1)
@@ -1081,6 +1117,7 @@ Partial Class Calculadora
         Me.btnE.BackColor = System.Drawing.Color.Black
         Me.btnE.FlatAppearance.BorderSize = 3
         Me.btnE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnE.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnE.ForeColor = System.Drawing.Color.Lime
         Me.btnE.Location = New System.Drawing.Point(169, 168)
         Me.btnE.Margin = New System.Windows.Forms.Padding(1)
@@ -1096,6 +1133,7 @@ Partial Class Calculadora
         Me.btnCot.BackColor = System.Drawing.Color.Black
         Me.btnCot.FlatAppearance.BorderSize = 3
         Me.btnCot.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCot.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCot.ForeColor = System.Drawing.Color.Lime
         Me.btnCot.Location = New System.Drawing.Point(43, 200)
         Me.btnCot.Margin = New System.Windows.Forms.Padding(1)
@@ -1111,6 +1149,7 @@ Partial Class Calculadora
         Me.btnD.BackColor = System.Drawing.Color.Black
         Me.btnD.FlatAppearance.BorderSize = 3
         Me.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnD.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnD.ForeColor = System.Drawing.Color.Lime
         Me.btnD.Location = New System.Drawing.Point(169, 136)
         Me.btnD.Margin = New System.Windows.Forms.Padding(1)
@@ -1126,6 +1165,7 @@ Partial Class Calculadora
         Me.btnSin.BackColor = System.Drawing.Color.Black
         Me.btnSin.FlatAppearance.BorderSize = 3
         Me.btnSin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSin.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSin.ForeColor = System.Drawing.Color.Lime
         Me.btnSin.Location = New System.Drawing.Point(1, 136)
         Me.btnSin.Margin = New System.Windows.Forms.Padding(1)
@@ -1204,6 +1244,7 @@ Partial Class Calculadora
         Me.btnCos.BackColor = System.Drawing.Color.Black
         Me.btnCos.FlatAppearance.BorderSize = 3
         Me.btnCos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCos.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCos.ForeColor = System.Drawing.Color.Lime
         Me.btnCos.Location = New System.Drawing.Point(1, 168)
         Me.btnCos.Margin = New System.Windows.Forms.Padding(1)
@@ -1219,6 +1260,7 @@ Partial Class Calculadora
         Me.btnTan.BackColor = System.Drawing.Color.Black
         Me.btnTan.FlatAppearance.BorderSize = 3
         Me.btnTan.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnTan.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTan.ForeColor = System.Drawing.Color.Lime
         Me.btnTan.Location = New System.Drawing.Point(1, 200)
         Me.btnTan.Margin = New System.Windows.Forms.Padding(1)
@@ -1234,6 +1276,7 @@ Partial Class Calculadora
         Me.btnCsc.BackColor = System.Drawing.Color.Black
         Me.btnCsc.FlatAppearance.BorderSize = 3
         Me.btnCsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCsc.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCsc.ForeColor = System.Drawing.Color.Lime
         Me.btnCsc.Location = New System.Drawing.Point(43, 136)
         Me.btnCsc.Margin = New System.Windows.Forms.Padding(1)

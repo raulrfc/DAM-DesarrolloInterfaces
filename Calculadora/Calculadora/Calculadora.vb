@@ -5,9 +5,7 @@
     Dim posicion As Integer = 1 ' Define la variable posición para controlar la localización de los botones al integrar los módulos a la calculadora
     Dim flag As String = "dec" ' Variable de control para la conversión numérica inicializada a decimal
 
-
 #Region "Funciones necesarias"
-
     Private Sub encolarOperacionYOperando(ByVal op As String)
         Dim operando As Decimal
 
@@ -23,30 +21,6 @@
     End Sub
 
     Private Sub operar()
-        '''''''''''''''' INTENTO DE PRIORIZAR OPERACIONES ''''''''''''''''''''''
-        'Dim result As String = ""
-        'Dim num1, num2, numres As Decimal
-
-        'Do While (operandos.Count > 0 Or operaciones.Count > 0)
-        '    result = result & operandos.Dequeue
-        '    If operaciones.Count > 0 Then
-        '        result = result & operaciones.Dequeue
-        '    End If
-        'Loop
-
-        'For i = 0 To result.Length - 1
-        '    If result(i) = "*" Then
-        '        num1 = Decimal.Parse(result(i - 1))
-        '        num2 = Decimal.Parse(result(i + 1))
-        '        numres = num1 * num2
-        '        result.Replace(result(i - 1), "")
-        '        result.Replace(result(i), numres)
-        '        result.Replace(result(i + 1), "")
-        '        Console.WriteLine(result)
-
-        '    End If
-        'Next
-        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         resultado = operandos.Dequeue 'Quitamos de la cola el primer elemento y se lo asignamos a "resultado"
 
         Do While (operandos.Count > 0 Or operaciones.Count > 0) 'Mientras el número de elementos en la cola de operandos sea mayor a 0, realizamos las operaciones
@@ -124,8 +98,6 @@
         End Select
         e.Handled = True
     End Sub
-
-    
 #End Region
 
 #Region "Menus"
@@ -238,48 +210,60 @@
 
     Private Sub btn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum1.Click, btn1.Click
         txt1.Text = txt1.Text & 1 'Agregamos a la caja de texto el número 1
+        setMayoresSound()
+
     End Sub
 
     Private Sub btn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum2.Click, btn2.Click
         txt1.Text = txt1.Text & 2
+        setMayoresSound()
     End Sub
 
     Private Sub btn3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum3.Click, btn3.Click
         txt1.Text = txt1.Text & 3
+        setMayoresSound()
     End Sub
 
     Private Sub btn4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum4.Click, btn4.Click
         txt1.Text = txt1.Text & 4
+        setMayoresSound()
     End Sub
 
     Private Sub btn5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum5.Click, btn5.Click
         txt1.Text = txt1.Text & 5
+        setMayoresSound()
     End Sub
 
     Private Sub btn6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum6.Click, btn6.Click
         txt1.Text = txt1.Text & 6
+        setMayoresSound()
     End Sub
 
     Private Sub btn7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum7.Click, btn7.Click
         txt1.Text = txt1.Text & 7
+        setMayoresSound()
     End Sub
 
     Private Sub btn8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum8.Click, btn8.Click
         txt1.Text = txt1.Text & 8
+        setMayoresSound()
     End Sub
 
     Private Sub btn9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum9.Click, btn9.Click
         txt1.Text = txt1.Text & 9
+        setMayoresSound()
     End Sub
 
     Private Sub btn0_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNum0.Click, btn0.Click
         txt1.Text = txt1.Text & 0
+        setMayoresSound()
     End Sub
 
 #End Region
 
 #Region "Operaciones niños"
     Private Sub btnIgual_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIgual.Click, btnEqual.Click
+        setMayoresSound()
         If (txt1.Text <> "") Then
             operandos.Enqueue(Decimal.Parse(txt1.Text))
         End If
@@ -290,23 +274,28 @@
     End Sub
 
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click, btnClear.Click
+        setMayoresSound()
         txt1.Clear()
         resultado = 0
     End Sub
 
     Private Sub btnSumar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpSumar.Click, btnSumar.Click
+        setMayoresSound()
         encolarOperacionYOperando("+")
     End Sub
 
     Private Sub btnRestar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpRestar.Click, btnRestar.Click
+        setMayoresSound()
         encolarOperacionYOperando("-")
     End Sub
 
     Private Sub btnMultiplicar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpMultiplicar.Click, btnMultiplicar.Click
+        setMayoresSound()
         encolarOperacionYOperando("x")
     End Sub
 
     Private Sub btnDividir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpDividir.Click, btnDividir.Click
+        setMayoresSound()
         encolarOperacionYOperando("/")
     End Sub
 #End Region
@@ -314,19 +303,23 @@
 #Region "Operaciones mayores"
 
     Private Sub btnPercent_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpPercent.Click, btnPercent.Click
+        setMayoresSound()
         encolarOperacionYOperando("%")
     End Sub
 
     Private Sub btnSigno_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpSigno.Click, btnSigno.Click
+        setMayoresSound()
         txt1.Text = Decimal.Negate(txt1.Text)
     End Sub
 
     Private Sub btnRaiz_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpRaiz.Click, btnRaiz.Click
+        setMayoresSound()
         encolarOperacionYOperando("Raiz")
     End Sub
 
     Private Sub btnDecimal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpDecimal.Click, btnDecimal.Click 'Agregar la coma decimal
         Dim dot As Boolean = False 'Define una variable de control booleana como False
+        setMayoresSound()
 
         If txt1.Text.IndexOf(",") >= 0 Then 'Si detecta la coma en la caja de texto, cambia el valor de dot a True
             dot = True
@@ -471,6 +464,7 @@
     End Sub
 
     Private Sub rbtnBinary_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtnBinary.CheckedChanged
+
         If rbtnBinary.Checked = True Then
             setBinary()
             conversionNumerica(flag, txt1.Text, 2)
