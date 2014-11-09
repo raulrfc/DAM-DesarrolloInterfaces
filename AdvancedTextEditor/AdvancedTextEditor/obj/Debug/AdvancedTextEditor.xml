@@ -1,0 +1,96 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AdvancedTextEditor
+</name>
+</assembly>
+<members>
+<member name="P:AdvancedTextEditor.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_border_color_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_content_copy_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_content_cut_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_content_paste_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_folder_open_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_format_bold_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_format_color_fill_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_format_color_text_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_format_italic_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_format_strikethrough_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_format_underline_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_insert_drive_file_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_redo_black_24dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_save_black_18dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_search_black_24dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.ic_undo_black_24dp">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.pdf">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AdvancedTextEditor.My.Resources.Resources.pdf24">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="T:AdvancedTextEditor.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+</members>
+</doc>

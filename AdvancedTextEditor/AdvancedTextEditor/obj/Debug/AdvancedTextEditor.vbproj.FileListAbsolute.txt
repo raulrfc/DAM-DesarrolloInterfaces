@@ -1,0 +1,21 @@
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe.config
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.pdb
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.AdvancedTextEditor.resources
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Resources.resources
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.vbproj.GenerateResource.Cache
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.exe
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\AppData\Local\Temporary Projects\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.pdb
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe.config
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.exe
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.pdb
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.pdb
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.AdvancedTextEditor.resources
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Resources.resources
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.vbproj.GenerateResource.Cache
+C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Buscar.resources
