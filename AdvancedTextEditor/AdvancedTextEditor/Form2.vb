@@ -4,6 +4,7 @@ Public Class Buscar
     Dim start As Integer = 0 ' Posición de inicio
     Dim indexOfSearchText As Integer = 0 ' Posición de búsqueda
     Dim rtb As RichTextBox = AdvancedTextEditor.GetCurrentDocument
+    Dim col As Color
 
     Private Sub btnFind_Click(sender As Object, e As EventArgs) Handles btnFind.Click
         Dim startindex As Integer = 0
@@ -14,12 +15,13 @@ Public Class Buscar
 
         ' Si el string se encuentra en el texto lo ilumina
         If startindex >= 0 Then
-            ' Cambia el color a rojo
-            rtb.SelectionColor = Color.Red
             ' Encuentra el índice final (número de caracteres en el rtb)
             Dim endindex As Integer = txt1.Text.Length
             ' Se posiciona en el string seleccionado
             rtb.Select(startindex, endindex)
+            ' Cambia el color a rojo
+            col = rtb.SelectionBackColor
+            rtb.SelectionBackColor = Color.Red
             ' Marca la posicion de inicio tras la posicion del ultimo string buscado
             start = startindex + endindex
         Else
@@ -31,7 +33,8 @@ Public Class Buscar
     Public Function FindMyText(ByVal txtToSearch As String, ByVal searchStart As Integer, ByVal searchEnd As Integer) As Integer
         ' Deselecciona el último string 
         If searchStart > 0 AndAlso searchEnd > 0 AndAlso indexOfSearchText >= 0 Then
-            rtb.Undo()
+
+            rtb.SelectionBackColor = col
             start = 0
             indexOfSearchText = 0
         End If
@@ -62,12 +65,12 @@ Public Class Buscar
     End Sub
     ' Método para reemplazar
     Private Sub btnReplace_Click(sender As Object, e As EventArgs) Handles btnReplace.Click
-        Dim startindex As Integer = 0
 
-        If txt1.Text.Length > 0 Then
-            startindex = FindMyText(txt1.Text.Trim(), start, rtb.Text.Length)
-        End If
+        rtb.SelectionBackColor = col
         rtb.SelectedText = rtb.SelectedText.Replace(txt1.Text, txt2.Text)
+        If (txt2.Text.Length < txt1.Text.Length) Then
+            indexOfSearchText -= (txt1.Text.Length - txt2.Text.Length)
+        End If
 
     End Sub
     ' Opciones personalizadas aplicadas al cargar el formulario
@@ -79,6 +82,6 @@ Public Class Buscar
     End Sub
     ' Cuando se pulse sobre el botón de cerrar se desharán los cambios 
     Private Sub Form2_Closing(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        rtb.Undo()
+        rtb.SelectionBackColor = col
     End Sub
 End Class

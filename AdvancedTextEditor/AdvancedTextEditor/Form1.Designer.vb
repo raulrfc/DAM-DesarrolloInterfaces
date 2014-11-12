@@ -567,7 +567,6 @@ Partial Class AdvancedTextEditor
         '
         'Timer
         '
-        Me.Timer.Enabled = True
         Me.Timer.Interval = 1
         '
         'contextMnu
