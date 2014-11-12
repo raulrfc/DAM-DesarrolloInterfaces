@@ -19,3 +19,25 @@ C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedT
 C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Resources.resources
 C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.vbproj.GenerateResource.Cache
 C:\Users\Niar\Documents\Visual Studio 2012\Projects\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Buscar.resources
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe.config
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.exe
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.xml
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.pdb
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.AdvancedTextEditor.resources
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Buscar.resources
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Resources.resources
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.vbproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.pdb
+C:\Users\usuario\Desktop\Proyectos VB\DAM-DesarrolloInterfaces-master\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe.config
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.exe
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.exe
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\bin\Debug\AdvancedTextEditor.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.AdvancedTextEditor.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Buscar.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.Resources.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\AdvancedTextEditor\AdvancedTextEditor\obj\Debug\AdvancedTextEditor.vbproj.GenerateResource.Cache
