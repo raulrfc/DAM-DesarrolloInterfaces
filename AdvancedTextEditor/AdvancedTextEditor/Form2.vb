@@ -84,4 +84,19 @@ Public Class Buscar
     Private Sub Form2_Closing(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         rtb.SelectionBackColor = col
     End Sub
+
+    Private Sub replaceALL_Click(sender As Object, e As EventArgs) Handles replaceALL.Click
+        Dim i As Integer = 0
+        Dim lon As Integer = rtb.TextLength
+        For i = 0 To lon
+
+            rtb.Find(txt1.Text, i, rtb.TextLength, RichTextBoxFinds.None)
+            If (rtb.SelectedText.Length = 0) Then
+                Return
+            End If
+
+            rtb.SelectedText = rtb.SelectedText.Replace(txt1.Text, txt2.Text)
+            lon = rtb.TextLength
+        Next
+    End Sub
 End Class

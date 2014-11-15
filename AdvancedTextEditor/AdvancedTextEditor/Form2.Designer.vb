@@ -26,6 +26,7 @@ Partial Class Buscar
         Me.btnReplace = New System.Windows.Forms.Button()
         Me.txt1 = New System.Windows.Forms.TextBox()
         Me.txt2 = New System.Windows.Forms.TextBox()
+        Me.replaceALL = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnFind
@@ -72,12 +73,25 @@ Partial Class Buscar
         Me.txt2.Size = New System.Drawing.Size(143, 27)
         Me.txt2.TabIndex = 3
         '
+        'replaceALL
+        '
+        Me.replaceALL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.replaceALL.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.replaceALL.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.replaceALL.Location = New System.Drawing.Point(12, 115)
+        Me.replaceALL.Name = "replaceALL"
+        Me.replaceALL.Size = New System.Drawing.Size(240, 27)
+        Me.replaceALL.TabIndex = 4
+        Me.replaceALL.Text = "Reemplazar Todo"
+        Me.replaceALL.UseVisualStyleBackColor = True
+        '
         'Buscar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.ClientSize = New System.Drawing.Size(270, 124)
+        Me.ClientSize = New System.Drawing.Size(270, 154)
+        Me.Controls.Add(Me.replaceALL)
         Me.Controls.Add(Me.txt2)
         Me.Controls.Add(Me.txt1)
         Me.Controls.Add(Me.btnReplace)
@@ -94,4 +108,5 @@ Partial Class Buscar
     Friend WithEvents btnReplace As System.Windows.Forms.Button
     Friend WithEvents txt1 As System.Windows.Forms.TextBox
     Friend WithEvents txt2 As System.Windows.Forms.TextBox
+    Friend WithEvents replaceALL As System.Windows.Forms.Button
 End Class

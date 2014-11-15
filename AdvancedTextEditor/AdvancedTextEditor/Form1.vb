@@ -11,7 +11,7 @@ Public Class AdvancedTextEditor
 
 #Region "Tabs"
     ' Método para agregar una nueva pestaña
-    Private Sub AddTab()
+    Private Sub AddTab(Optional ByVal file As String = Nothing)
         Dim Body As New RichTextBox() ' Define un rich textbox para el cuerpo de la pestaña
         Dim DocumentText As String
         ' Agrego las propiedades al rtb
@@ -29,6 +29,7 @@ Public Class AdvancedTextEditor
         NewPage.Controls.Add(Body)
 
         TabControl1.TabPages.Add(NewPage)
+        TabControl1.SelectedTab = NewPage
     End Sub
     ' Método para eliminar una pestaña, si solo queda una eliminará la pestaña y agregará una nueva
     Private Sub RemoveTab()
@@ -64,8 +65,15 @@ Public Class AdvancedTextEditor
 #Region "SaveAndOpen"
     ' Método para guardar, si se ha abierto el archivo anteriormente lo guarda directamente, si no es así muestra el cuadro de guardar como...
     Private Sub Save()
-        If ofd.FileName.Length > 0 Then
-            GetCurrentDocument.SaveFile(ofd.FileName)
+
+        If Not sfd.FileName = "" = True Then
+            If Path.GetFileName(sfd.FileName) = TabControl1.SelectedTab.Text Then
+                GetCurrentDocument.SaveFile(sfd.FileName)
+            End If
+        ElseIf Not ofd.FileName = "" = True Then
+            If Path.GetFileName(ofd.FileName) = TabControl1.SelectedTab.Text Then
+                GetCurrentDocument.SaveFile(ofd.FileName)
+            End If
         Else
             SaveAs()
         End If
@@ -95,13 +103,15 @@ Public Class AdvancedTextEditor
         ofd.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
         ofd.Filter = "RTF|*.rtf|Text Files|*.txt|VB Files|*.vb|C# Files|*.cs|All Files|*.*"
         ofd.Title = "Abrir"
+        
         ' Si se pulsa aceptar pasa al siguiente filtro
         If ofd.ShowDialog() = Windows.Forms.DialogResult.OK Then
             ' Si el nombre de archivo es mayor de 0 y la extension igual a .rtf, lo abre como texto rico, sino lo abre como texto plano
             If ofd.FileName.Length > 0 AndAlso StrComp(Path.GetExtension(ofd.FileName), ".rtf") = 0 Then
-
+                AddTab(ofd.FileName)
                 GetCurrentDocument.LoadFile(ofd.FileName, RichTextBoxStreamType.RichText)
             Else
+                AddTab(ofd.FileName)
                 GetCurrentDocument.LoadFile(ofd.FileName, RichTextBoxStreamType.PlainText)
             End If
             ' Asigna a la pestaña el nombre del fichero abierto
@@ -227,6 +237,9 @@ Public Class AdvancedTextEditor
         AddTab()
         GetFontCollection()
         PopulateFontSizes()
+        Dim NewFont As New Font(GetCurrentDocument.SelectionFont.Name, GetCurrentDocument.SelectionFont.Size, GetCurrentDocument.SelectionFont.Style)
+
+        GetCurrentDocument.SelectionFont = NewFont
         dateStart = Date.Now
 
     End Sub
