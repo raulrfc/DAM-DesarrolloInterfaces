@@ -73,6 +73,66 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property dice1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dice1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dice2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dice2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dice3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dice3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dice4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dice4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dice5() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dice5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dice6() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dice6", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property logo() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("logo", resourceCulture)

@@ -172,6 +172,7 @@
         Cfg.player2 = player2
         Cfg.player3 = player3
         Cfg.player4 = player4
+        Tablero.btnStart.Enabled = True
         Me.Close()
     End Sub
 #End Region

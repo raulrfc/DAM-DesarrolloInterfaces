@@ -22,16 +22,21 @@ Partial Class Tablero
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Tablero))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtReport = New System.Windows.Forms.TextBox()
+        Me.btnStart = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblTurn = New System.Windows.Forms.Label()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.rollDice = New System.Windows.Forms.Button()
-        Me.Logo = New System.Windows.Forms.PictureBox()
+        Me.btnRolldice = New System.Windows.Forms.Button()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape28 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape27 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape26 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape25 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape24 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape17 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape23 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape22 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape21 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -57,14 +62,15 @@ Partial Class Tablero
         Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.pbDices = New System.Windows.Forms.PictureBox()
+        Me.Logo = New System.Windows.Forms.PictureBox()
         Me.pbTablero = New System.Windows.Forms.PictureBox()
-        Me.RectangleShape17 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape24 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape25 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape26 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape27 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape28 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.tmrRoll = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblPlayer = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        CType(Me.pbDices, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbTablero, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,12 +78,14 @@ Partial Class Tablero
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.txtReport)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.lblPlayer)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.btnStart)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.lblTurn)
         Me.Panel1.Controls.Add(Me.btnNuevo)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.rollDice)
+        Me.Panel1.Controls.Add(Me.btnRolldice)
         Me.Panel1.Controls.Add(Me.Logo)
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(865, 0)
@@ -86,28 +94,34 @@ Partial Class Tablero
         Me.Panel1.Size = New System.Drawing.Size(293, 793)
         Me.Panel1.TabIndex = 1
         '
-        'txtReport
+        'btnStart
         '
-        Me.txtReport.Location = New System.Drawing.Point(-1, 441)
-        Me.txtReport.Margin = New System.Windows.Forms.Padding(0, 2, 0, 0)
-        Me.txtReport.Multiline = True
-        Me.txtReport.Name = "txtReport"
-        Me.txtReport.ReadOnly = True
-        Me.txtReport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtReport.Size = New System.Drawing.Size(291, 238)
-        Me.txtReport.TabIndex = 7
+        Me.btnStart.BackColor = System.Drawing.Color.Salmon
+        Me.btnStart.Enabled = False
+        Me.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.btnStart.FlatAppearance.BorderSize = 2
+        Me.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStart.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStart.ForeColor = System.Drawing.Color.Red
+        Me.btnStart.Location = New System.Drawing.Point(111, 713)
+        Me.btnStart.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(116, 77)
+        Me.btnStart.TabIndex = 8
+        Me.btnStart.Text = "EMPEZAR"
+        Me.btnStart.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Font = New System.Drawing.Font("OCR A Extended", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(150, 90)
+        Me.Label2.Location = New System.Drawing.Point(89, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label2.Size = New System.Drawing.Size(87, 35)
+        Me.Label2.Size = New System.Drawing.Size(77, 33)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Turno"
         '
@@ -116,57 +130,46 @@ Partial Class Tablero
         Me.lblTurn.AutoSize = True
         Me.lblTurn.BackColor = System.Drawing.Color.White
         Me.lblTurn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTurn.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTurn.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTurn.ForeColor = System.Drawing.Color.Red
-        Me.lblTurn.Location = New System.Drawing.Point(243, 89)
+        Me.lblTurn.Location = New System.Drawing.Point(172, 89)
         Me.lblTurn.Name = "lblTurn"
         Me.lblTurn.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblTurn.Size = New System.Drawing.Size(34, 36)
+        Me.lblTurn.Size = New System.Drawing.Size(28, 33)
         Me.lblTurn.TabIndex = 5
         Me.lblTurn.Text = "1"
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(186, 770)
+        Me.btnNuevo.BackColor = System.Drawing.Color.Red
+        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnNuevo.FlatAppearance.BorderSize = 2
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.White
+        Me.btnNuevo.Location = New System.Drawing.Point(0, 89)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo.Size = New System.Drawing.Size(83, 75)
         Me.btnNuevo.TabIndex = 3
         Me.btnNuevo.Text = "NUEVO"
-        Me.btnNuevo.UseVisualStyleBackColor = True
+        Me.btnNuevo.UseVisualStyleBackColor = False
         '
-        'Label1
+        'btnRolldice
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(203, 732)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Label1"
-        '
-        'rollDice
-        '
-        Me.rollDice.BackColor = System.Drawing.Color.Salmon
-        Me.rollDice.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.rollDice.FlatAppearance.BorderSize = 2
-        Me.rollDice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.rollDice.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rollDice.ForeColor = System.Drawing.Color.Red
-        Me.rollDice.Location = New System.Drawing.Point(3, 715)
-        Me.rollDice.Name = "rollDice"
-        Me.rollDice.Size = New System.Drawing.Size(137, 75)
-        Me.rollDice.TabIndex = 1
-        Me.rollDice.Text = "TIRAR DADOS"
-        Me.rollDice.UseVisualStyleBackColor = False
-        '
-        'Logo
-        '
-        Me.Logo.Image = Global.Monopoly.My.Resources.Resources.logo
-        Me.Logo.Location = New System.Drawing.Point(0, 0)
-        Me.Logo.Name = "Logo"
-        Me.Logo.Size = New System.Drawing.Size(290, 86)
-        Me.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Logo.TabIndex = 0
-        Me.Logo.TabStop = False
+        Me.btnRolldice.BackColor = System.Drawing.Color.Salmon
+        Me.btnRolldice.Enabled = False
+        Me.btnRolldice.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.btnRolldice.FlatAppearance.BorderSize = 2
+        Me.btnRolldice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRolldice.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRolldice.ForeColor = System.Drawing.Color.Red
+        Me.btnRolldice.Location = New System.Drawing.Point(3, 713)
+        Me.btnRolldice.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnRolldice.Name = "btnRolldice"
+        Me.btnRolldice.Size = New System.Drawing.Size(108, 77)
+        Me.btnRolldice.TabIndex = 1
+        Me.btnRolldice.Text = "TIRAR DADOS"
+        Me.btnRolldice.UseVisualStyleBackColor = False
         '
         'ShapeContainer1
         '
@@ -177,6 +180,66 @@ Partial Class Tablero
         Me.ShapeContainer1.Size = New System.Drawing.Size(293, 793)
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape28
+        '
+        Me.RectangleShape28.BackColor = System.Drawing.Color.White
+        Me.RectangleShape28.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape28.BorderColor = System.Drawing.Color.Aqua
+        Me.RectangleShape28.BorderWidth = 2
+        Me.RectangleShape28.Location = New System.Drawing.Point(183, 376)
+        Me.RectangleShape28.Name = "RectangleShape28"
+        Me.RectangleShape28.Size = New System.Drawing.Size(25, 41)
+        '
+        'RectangleShape27
+        '
+        Me.RectangleShape27.BackColor = System.Drawing.Color.White
+        Me.RectangleShape27.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape27.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.RectangleShape27.BorderWidth = 2
+        Me.RectangleShape27.Location = New System.Drawing.Point(152, 376)
+        Me.RectangleShape27.Name = "RectangleShape27"
+        Me.RectangleShape27.Size = New System.Drawing.Size(25, 41)
+        '
+        'RectangleShape26
+        '
+        Me.RectangleShape26.BackColor = System.Drawing.Color.White
+        Me.RectangleShape26.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape26.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape26.BorderWidth = 2
+        Me.RectangleShape26.Location = New System.Drawing.Point(103, 377)
+        Me.RectangleShape26.Name = "RectangleShape26"
+        Me.RectangleShape26.Size = New System.Drawing.Size(25, 41)
+        '
+        'RectangleShape25
+        '
+        Me.RectangleShape25.BackColor = System.Drawing.Color.White
+        Me.RectangleShape25.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape25.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape25.BorderWidth = 2
+        Me.RectangleShape25.Location = New System.Drawing.Point(70, 377)
+        Me.RectangleShape25.Name = "RectangleShape25"
+        Me.RectangleShape25.Size = New System.Drawing.Size(25, 41)
+        '
+        'RectangleShape24
+        '
+        Me.RectangleShape24.BackColor = System.Drawing.Color.White
+        Me.RectangleShape24.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape24.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape24.BorderWidth = 2
+        Me.RectangleShape24.Location = New System.Drawing.Point(38, 377)
+        Me.RectangleShape24.Name = "RectangleShape24"
+        Me.RectangleShape24.Size = New System.Drawing.Size(25, 41)
+        '
+        'RectangleShape17
+        '
+        Me.RectangleShape17.BackColor = System.Drawing.Color.White
+        Me.RectangleShape17.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape17.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape17.BorderWidth = 2
+        Me.RectangleShape17.Location = New System.Drawing.Point(7, 377)
+        Me.RectangleShape17.Name = "RectangleShape17"
+        Me.RectangleShape17.Size = New System.Drawing.Size(25, 41)
         '
         'RectangleShape23
         '
@@ -428,6 +491,27 @@ Partial Class Tablero
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.Size = New System.Drawing.Size(25, 41)
         '
+        'pbDices
+        '
+        Me.pbDices.InitialImage = Global.Monopoly.My.Resources.Resources.dice6
+        Me.pbDices.Location = New System.Drawing.Point(384, 322)
+        Me.pbDices.Name = "pbDices"
+        Me.pbDices.Size = New System.Drawing.Size(100, 97)
+        Me.pbDices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbDices.TabIndex = 2
+        Me.pbDices.TabStop = False
+        Me.pbDices.Visible = False
+        '
+        'Logo
+        '
+        Me.Logo.Image = Global.Monopoly.My.Resources.Resources.logo
+        Me.Logo.Location = New System.Drawing.Point(0, 0)
+        Me.Logo.Name = "Logo"
+        Me.Logo.Size = New System.Drawing.Size(290, 86)
+        Me.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Logo.TabIndex = 0
+        Me.Logo.TabStop = False
+        '
         'pbTablero
         '
         Me.pbTablero.Image = Global.Monopoly.My.Resources.Resources.Tablero
@@ -439,71 +523,52 @@ Partial Class Tablero
         Me.pbTablero.TabIndex = 0
         Me.pbTablero.TabStop = False
         '
-        'RectangleShape17
+        'tmrRoll
         '
-        Me.RectangleShape17.BackColor = System.Drawing.Color.White
-        Me.RectangleShape17.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape17.BorderColor = System.Drawing.Color.Gray
-        Me.RectangleShape17.BorderWidth = 2
-        Me.RectangleShape17.Location = New System.Drawing.Point(7, 377)
-        Me.RectangleShape17.Name = "RectangleShape17"
-        Me.RectangleShape17.Size = New System.Drawing.Size(25, 41)
+        Me.tmrRoll.Interval = 200
         '
-        'RectangleShape24
+        'Label1
         '
-        Me.RectangleShape24.BackColor = System.Drawing.Color.White
-        Me.RectangleShape24.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape24.BorderColor = System.Drawing.Color.Gray
-        Me.RectangleShape24.BorderWidth = 2
-        Me.RectangleShape24.Location = New System.Drawing.Point(38, 377)
-        Me.RectangleShape24.Name = "RectangleShape24"
-        Me.RectangleShape24.Size = New System.Drawing.Size(25, 41)
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label1.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(89, 131)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Padding = New System.Windows.Forms.Padding(5)
+        Me.Label1.Size = New System.Drawing.Size(99, 33)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "JUGADOR"
         '
-        'RectangleShape25
+        'lblPlayer
         '
-        Me.RectangleShape25.BackColor = System.Drawing.Color.White
-        Me.RectangleShape25.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape25.BorderColor = System.Drawing.Color.Gray
-        Me.RectangleShape25.BorderWidth = 2
-        Me.RectangleShape25.Location = New System.Drawing.Point(70, 377)
-        Me.RectangleShape25.Name = "RectangleShape25"
-        Me.RectangleShape25.Size = New System.Drawing.Size(25, 41)
+        Me.lblPlayer.AutoSize = True
+        Me.lblPlayer.BackColor = System.Drawing.Color.White
+        Me.lblPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPlayer.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlayer.ForeColor = System.Drawing.Color.Red
+        Me.lblPlayer.Location = New System.Drawing.Point(194, 131)
+        Me.lblPlayer.Name = "lblPlayer"
+        Me.lblPlayer.Padding = New System.Windows.Forms.Padding(5)
+        Me.lblPlayer.Size = New System.Drawing.Size(12, 33)
+        Me.lblPlayer.TabIndex = 10
         '
-        'RectangleShape26
+        'Label3
         '
-        Me.RectangleShape26.BackColor = System.Drawing.Color.White
-        Me.RectangleShape26.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape26.BorderColor = System.Drawing.Color.Gray
-        Me.RectangleShape26.BorderWidth = 2
-        Me.RectangleShape26.Location = New System.Drawing.Point(103, 377)
-        Me.RectangleShape26.Name = "RectangleShape26"
-        Me.RectangleShape26.Size = New System.Drawing.Size(25, 41)
-        '
-        'RectangleShape27
-        '
-        Me.RectangleShape27.BackColor = System.Drawing.Color.White
-        Me.RectangleShape27.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape27.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.RectangleShape27.BorderWidth = 2
-        Me.RectangleShape27.Location = New System.Drawing.Point(152, 376)
-        Me.RectangleShape27.Name = "RectangleShape27"
-        Me.RectangleShape27.Size = New System.Drawing.Size(25, 41)
-        '
-        'RectangleShape28
-        '
-        Me.RectangleShape28.BackColor = System.Drawing.Color.White
-        Me.RectangleShape28.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape28.BorderColor = System.Drawing.Color.Aqua
-        Me.RectangleShape28.BorderWidth = 2
-        Me.RectangleShape28.Location = New System.Drawing.Point(183, 376)
-        Me.RectangleShape28.Name = "RectangleShape28"
-        Me.RectangleShape28.Size = New System.Drawing.Size(25, 41)
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(37, 456)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Label3"
         '
         'Tablero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 794)
+        Me.Controls.Add(Me.pbDices)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pbTablero)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -512,6 +577,7 @@ Partial Class Tablero
         Me.Text = "Monopoly"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.pbDices, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbTablero, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -519,11 +585,9 @@ Partial Class Tablero
     End Sub
     Friend WithEvents pbTablero As System.Windows.Forms.PictureBox
     Friend WithEvents Logo As System.Windows.Forms.PictureBox
-    Friend WithEvents rollDice As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnRolldice As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
-    Friend WithEvents txtReport As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lblTurn As System.Windows.Forms.Label
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
@@ -558,5 +622,11 @@ Partial Class Tablero
     Friend WithEvents RectangleShape25 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents RectangleShape24 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents RectangleShape17 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents btnStart As System.Windows.Forms.Button
+    Friend WithEvents pbDices As System.Windows.Forms.PictureBox
+    Friend WithEvents tmrRoll As System.Windows.Forms.Timer
+    Friend WithEvents lblPlayer As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class

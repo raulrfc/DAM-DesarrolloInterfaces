@@ -5,7 +5,7 @@ Public Class Player
     Dim color As Color
     Dim cash As Integer
     Dim properties As List(Of Square)
-    Dim position As Square
+    Dim position As Integer = 0
 
     Sub New(ByVal name As String, ByVal color As Color, ByVal cash As Integer)
         Me.name = name
@@ -13,11 +13,8 @@ Public Class Player
         Me.cash = cash
     End Sub
 
-    Public Sub rollDice()
-        Dim dice As New Random(My.Computer.Clock.TickCount)
-        Dim tirada As Integer = dice.Next(1, 7)
-
-        Tablero.Label1.Text = tirada
+    Public Sub move(ByVal value As Integer)
+        Me.position += value
     End Sub
 
     Public Function getName()

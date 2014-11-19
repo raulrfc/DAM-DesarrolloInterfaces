@@ -10,3 +10,4 @@ C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopo
 C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.xml
 C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.pdb
 C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.Nuevo.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.vbprojResolveAssemblyReference.cache
