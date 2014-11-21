@@ -228,13 +228,13 @@ Partial Class Tablero
         'lblPlayer
         '
         Me.lblPlayer.BackColor = System.Drawing.Color.White
-        Me.lblPlayer.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlayer.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPlayer.ForeColor = System.Drawing.Color.Red
         Me.lblPlayer.Location = New System.Drawing.Point(111, 129)
         Me.lblPlayer.Margin = New System.Windows.Forms.Padding(0)
         Me.lblPlayer.Name = "lblPlayer"
         Me.lblPlayer.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblPlayer.Size = New System.Drawing.Size(169, 31)
+        Me.lblPlayer.Size = New System.Drawing.Size(169, 33)
         Me.lblPlayer.TabIndex = 10
         Me.lblPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -242,13 +242,13 @@ Partial Class Tablero
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Red
         Me.Label1.Location = New System.Drawing.Point(8, 129)
         Me.Label1.Margin = New System.Windows.Forms.Padding(0)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label1.Size = New System.Drawing.Size(103, 31)
+        Me.Label1.Size = New System.Drawing.Size(117, 33)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "JUGADOR:"
         '
@@ -259,7 +259,7 @@ Partial Class Tablero
         Me.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnStart.FlatAppearance.BorderSize = 2
         Me.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStart.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStart.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStart.ForeColor = System.Drawing.Color.White
         Me.btnStart.Location = New System.Drawing.Point(153, 713)
         Me.btnStart.Margin = New System.Windows.Forms.Padding(0)
@@ -273,20 +273,20 @@ Partial Class Tablero
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(174, 98)
+        Me.Label2.Location = New System.Drawing.Point(172, 98)
         Me.Label2.Margin = New System.Windows.Forms.Padding(0)
         Me.Label2.Name = "Label2"
         Me.Label2.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label2.Size = New System.Drawing.Size(75, 31)
+        Me.Label2.Size = New System.Drawing.Size(77, 35)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Turno"
         '
         'lblTurn
         '
         Me.lblTurn.BackColor = System.Drawing.Color.White
-        Me.lblTurn.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTurn.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTurn.ForeColor = System.Drawing.Color.Red
         Me.lblTurn.Location = New System.Drawing.Point(249, 98)
         Me.lblTurn.Margin = New System.Windows.Forms.Padding(0)
@@ -302,7 +302,7 @@ Partial Class Tablero
         Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnNuevo.FlatAppearance.BorderSize = 2
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
         Me.btnNuevo.Location = New System.Drawing.Point(7, 92)
         Me.btnNuevo.Margin = New System.Windows.Forms.Padding(0)
@@ -319,7 +319,7 @@ Partial Class Tablero
         Me.btnRolldice.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnRolldice.FlatAppearance.BorderSize = 2
         Me.btnRolldice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRolldice.Font = New System.Drawing.Font("DS-Digital", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRolldice.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRolldice.ForeColor = System.Drawing.Color.White
         Me.btnRolldice.Location = New System.Drawing.Point(3, 713)
         Me.btnRolldice.Margin = New System.Windows.Forms.Padding(0)
@@ -670,7 +670,7 @@ Partial Class Tablero
         '
         Me.btnCancel.BackColor = System.Drawing.Color.Red
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("DS-Digital", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.Location = New System.Drawing.Point(79, 192)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(0)
@@ -686,7 +686,7 @@ Partial Class Tablero
         Me.btnBuy.Enabled = False
         Me.btnBuy.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuy.Font = New System.Drawing.Font("DS-Digital", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuy.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuy.ForeColor = System.Drawing.Color.White
         Me.btnBuy.Location = New System.Drawing.Point(4, 192)
         Me.btnBuy.Margin = New System.Windows.Forms.Padding(0)
