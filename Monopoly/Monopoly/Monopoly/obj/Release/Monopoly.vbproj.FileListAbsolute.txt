@@ -1,0 +1,12 @@
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\bin\Release\Monopoly.exe.config
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\bin\Release\Monopoly.exe
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\bin\Release\Monopoly.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\bin\Release\Monopoly.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.Nuevo.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.Tablero.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.Resources.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.vbproj.GenerateResource.Cache
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.exe
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Monopoly\Monopoly\Monopoly\obj\Release\Monopoly.vbprojResolveAssemblyReference.cache

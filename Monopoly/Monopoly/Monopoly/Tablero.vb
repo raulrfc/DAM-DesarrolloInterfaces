@@ -26,19 +26,27 @@ Public Class Tablero
 #End Region
 
 #Region "Methods"
-
+   
     Private Sub getCurrentPlayer()
         If playerTurn = 1 Then
             currentPlayer = player1
+            checkJail()
+
         End If
         If playerTurn = 2 Then
             currentPlayer = player2
+            checkJail()
+
         End If
         If playerTurn = 3 Then
             currentPlayer = player3
+            checkJail()
+
         End If
         If playerTurn = 4 Then
             currentPlayer = player4
+            checkJail()
+
         End If
     End Sub
 
@@ -79,91 +87,6 @@ Public Class Tablero
             lblP4Pos.Text = currentPlayer.getPosition
             lblP4Cash.Text = currentPlayer.getCash
         End If
-
-    End Sub
-
-    Private Sub JumpAction()
-        Dim result As DialogResult
-        Select Case currentPlayer.getPosition
-            Case 5
-                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Norte, quieres cogerlo?", "Parada del tranvía Sur", MessageBoxButtons.YesNo)
-                If result = Windows.Forms.DialogResult.Yes Then
-                    currentPlayer.move(20)
-                End If
-            Case 15
-                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Este, quieres cogerlo?", "Parada del tranvía Oeste", MessageBoxButtons.YesNo)
-                If result = Windows.Forms.DialogResult.Yes Then
-                    currentPlayer.move(20)
-                End If
-            Case 25
-                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Sur, quieres cogerlo?", "Parada del tranvía Norte", MessageBoxButtons.YesNo)
-                If result = Windows.Forms.DialogResult.Yes Then
-                    currentPlayer.move(20)
-                End If
-            Case 30
-                MsgBox("A la carcel")
-                currentPlayer.move(20)
-            Case 35
-                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Oeste, quieres cogerlo?", "Parada del tranvía Este", MessageBoxButtons.YesNo)
-                If result = Windows.Forms.DialogResult.Yes Then
-                    currentPlayer.move(20)
-                End If
-
-
-        End Select
-    End Sub
-
-    Private Sub OtherAction()
-        MsgBox("Has encontrado un lugar en el que descansar, tómate un respiro y piensa tus próximos movimientos")
-    End Sub
-
-    Private Sub GoAction()
-        currentPlayer.setCash(currentPlayer.getCash + 200)
-        MsgBox("¡Has pasado por la salida, se te han ingresado 200 € en tu cuenta!")
-    End Sub
-
-    Private Sub TaxAction()
-        currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice())
-        ' MsgBox(currentPlayer.getName + " ha pagado un impuesto por valor de " + currentSquare.getPrice)
-        UpdatePlayerStats()
-
-    End Sub
-
-    Private Sub StreetAction()
-        If (IsNothing(currentSquare.owner)) Then
-
-            btnBuy.Enabled = True
-        Else
-            targetPlayer = currentSquare.owner
-            currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent())
-            targetPlayer.setCash(targetPlayer.getCash + currentSquare.getRent())
-            'MsgBox(currentPlayer.getName + " le ha pagado " + currentSquare.getRent + " a " + targetPlayer.getName)
-            UpdatePlayerStats()
-        End If
-
-    End Sub
-
-    Private Sub checkSquare(ByVal pos As Integer)
-        Dim st As SquareType
-
-        currentSquare = board.Item(currentPlayer.getPosition)
-        st = currentSquare.getSquareType
-
-        Select Case st
-            Case SquareType.STREET
-                Panel2.Visible = True
-                StreetAction()
-            Case SquareType.TAX
-                TaxAction()
-            Case SquareType.JUMP
-                JumpAction()
-            Case SquareType.GO
-                GoAction()
-            Case SquareType.OTHER
-                OtherAction()
-
-        End Select
-        UpdatePlayerStats()
 
     End Sub
 
@@ -274,6 +197,263 @@ Public Class Tablero
         checkSquare(currentPlayer.getPosition)
     End Sub
 
+#End Region
+
+#Region "Squares"
+
+    Private Sub checkJail()
+        Dim jailedPlayer As Player
+        jailedPlayer = currentPlayer
+        If currentPlayer.getJail = True Then
+            If currentPlayer.getJailTime < 2 Then
+                playerTurn += 1
+                currentPlayer.setJailTime()
+                getCurrentPlayer()
+                UpdatePlayerStats()
+                MsgBox(jailedPlayer.getName + "está en la cárcel, es el turno del jugador " + currentPlayer.getName)
+            Else
+                MsgBox(jailedPlayer.getName + "ha salido de la cárcel")
+                currentPlayer.setJailTime()
+                currentPlayer.setJail(False)
+            End If
+
+        End If
+    End Sub
+
+    Private Sub checkHouses()
+        Dim result As DialogResult
+
+        If currentSquare.houseNum < 4 Then
+            result = MessageBox.Show("Tienes " + currentSquare.houseNum.ToString + " casas, ¿quieres comprar una casa por " + currentSquare.getRent.ToString() + "€ ?", currentSquare.getName, MessageBoxButtons.YesNo)
+            If result = Windows.Forms.DialogResult.Yes Then
+                currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent)
+                currentSquare.houseNum += 1
+            Else
+
+            End If
+        ElseIf currentSquare.houseNum = 4 Then
+            result = MessageBox.Show("Tienes " + currentSquare.houseNum.ToString + " casas, ¿quieres comprar un hotel por " + currentSquare.getRent.ToString() + "€ ?", currentSquare.getName, MessageBoxButtons.YesNo)
+            If result = Windows.Forms.DialogResult.Yes Then
+                currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent)
+                currentSquare.houseNum += 1
+                currentSquare.hotel = True
+            Else
+
+            End If
+        Else
+
+
+        End If
+
+    End Sub
+
+    Private Sub LuckyAction()
+        Dim result As DialogResult
+        Dim luck As Integer
+
+        luck = RandGen.Next(1, 10)
+
+        Select Case luck
+
+            Case 1
+                MsgBox("Avanza hasta la casilla de salida")
+                currentPlayer.setPosition(0)
+            Case 2
+                MsgBox("Retrocede 3 casillas")
+                currentPlayer.setPosition(currentPlayer.getPosition - 3)
+            Case 3
+                MsgBox("Necesitas un descanso, ve al parking gratuito")
+                currentPlayer.setPosition(20)
+            Case 4
+                MsgBox("Has entrado en un agujero negro, tu destino es un misterio")
+                currentPlayer.setPosition(RandGen.Next(1, 40))
+            Case 5
+                MsgBox("Ve a la carcel, eres un delincuente")
+                currentPlayer.setPosition(10)
+            Case 6
+                MessageBox.Show("Te has encontrado un cofre, ¿quieres abrirlo?", "Suerte", MessageBoxButtons.YesNo)
+
+                If result = Windows.Forms.DialogResult.Yes Then
+                    MsgBox("El cofre contenía joyas por valor de 150 €, ¡enhorabuena!")
+                    currentPlayer.setCash(currentPlayer.getCash + 150)
+                Else
+                    MsgBox("Dejas el cofre donde estaba")
+                End If
+            Case 7
+                MsgBox("Ve al Paseo Independencia")
+                currentPlayer.setPosition(39)
+            Case 8
+                MsgBox("Monopoly es un juego para disfrutar con los amigos, no os enfadéis y dale un abrazo a tus compañeros de juego")
+                MsgBox(":)")
+            Case 9
+                MsgBox("Retrocede 10 casillas")
+                currentPlayer.setPosition(currentPlayer.getPosition - 10)
+            Case 10
+                MessageBox.Show("Toma la pastilla azul y todo terminará, volverás a donde estabas; toma la pastilla roja y verás hasta donde llega la madriguera del conejo | AZUL(YES) ROJA(NO)", "Suerte", MessageBoxButtons.YesNo)
+
+                If result = Windows.Forms.DialogResult.Yes Then
+                    MsgBox("Tu mundo permanece inalterado")
+                Else
+                    Dim x As Integer = RandGen.Next(100, 500)
+                    MsgBox("Has visto lugares que nadie más conoce, en tu viaje has amasado una fortuna de " + x + " €")
+                    currentPlayer.setCash(currentPlayer.getCash + x)
+                End If
+
+        End Select
+
+    End Sub
+
+    Private Sub ChestAction()
+        Dim chest As Integer
+
+        chest = RandGen.Next(1, 10)
+
+        Select Case chest
+
+            Case 1
+                MsgBox("Gracias a las ayudas a la comunidad los vecinos han donado 50 € a tu causa")
+                currentPlayer.setCash(currentPlayer.getCash + 50)
+            Case 2
+                MsgBox("Tus inversiones en bolsa han dado sus frutos, has ganado 300 €")
+                currentPlayer.setCash(currentPlayer.getCash + 300)
+            Case 3
+                MsgBox("Tu visión innovadora te ha dado el primer premio del concurso de Innovate Or Die, has ganado 150 €")
+                currentPlayer.setCash(currentPlayer.getCash + 150)
+            Case 4
+                MsgBox("Te has encontrado el tesoro de un pirata, contiene 200 € en monedas de oro. YARR")
+                currentPlayer.setCash(currentPlayer.getCash + 200)
+            Case 5
+                MsgBox("Has salvado al mundo de la invasión alienigena en una heróica misión suicida, los gobiernos del mundo te han dado las gracias")
+            Case 6
+                MsgBox("Has completado la maratón de Nueva York, enhorabuena, estás en buena forma")
+            Case 7
+                MsgBox("Los sobornos al gobierno para recibir ayudas te han costado 150 €")
+                currentPlayer.setCash(currentPlayer.getCash - 150)
+            Case 8
+                MsgBox("El ruido de tus disparos jugando al Battlefield ha hecho que los militares bombardeen tu casa. Los daños ascienden a 300 €")
+                currentPlayer.setCash(currentPlayer.getCash - 300)
+            Case 9
+                MsgBox("Tu coche ha pinchado, mientras cambiabas la rueda te ha mordido una serpiente y un pájaro hizo sus deposiciones sobre tu cara gabardina, 200 €")
+                currentPlayer.setCash(currentPlayer.getCash - 200)
+            Case 10
+                MsgBox("Te han atracado, eres un tio con mala suerte, se han llevado 50 €, también eres pobre...")
+                currentPlayer.setCash(currentPlayer.getCash - 50)
+
+        End Select
+
+    End Sub
+
+    Private Sub JailAction()
+        Dim result As DialogResult
+
+        currentPlayer.setJail(True)
+
+        MsgBox("Estás en la carcel, puedes permanecer aquí durante 2 turnos o pagar 200 € de fianza")
+
+        result = MessageBox.Show("¿Quieres pagar la fianza?", "Carcel", MessageBoxButtons.YesNo)
+
+        If result = Windows.Forms.DialogResult.Yes Then
+            currentPlayer.setCash(currentPlayer.getCash - 200)
+            currentPlayer.setJail(False)
+        Else
+            checkJail()
+        End If
+    End Sub
+
+    Private Sub JumpAction()
+        Dim result As DialogResult
+        Select Case currentPlayer.getPosition
+            Case 5
+                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Norte, quieres cogerlo?", "Parada del tranvía Sur", MessageBoxButtons.YesNo)
+                If result = Windows.Forms.DialogResult.Yes Then
+                    currentPlayer.move(20)
+                End If
+            Case 15
+                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Este, quieres cogerlo?", "Parada del tranvía Oeste", MessageBoxButtons.YesNo)
+                If result = Windows.Forms.DialogResult.Yes Then
+                    currentPlayer.move(20)
+                End If
+            Case 25
+                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Sur, quieres cogerlo?", "Parada del tranvía Norte", MessageBoxButtons.YesNo)
+                If result = Windows.Forms.DialogResult.Yes Then
+                    currentPlayer.move(20)
+                End If
+            Case 30
+                MsgBox("A la carcel")
+                currentPlayer.move(20)
+            Case 35
+                result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Oeste, quieres cogerlo?", "Parada del tranvía Este", MessageBoxButtons.YesNo)
+                If result = Windows.Forms.DialogResult.Yes Then
+                    currentPlayer.move(20)
+                End If
+
+        End Select
+    End Sub
+
+    Private Sub OtherAction()
+        MsgBox("Has encontrado un lugar en el que descansar, tómate un respiro y piensa tus próximos movimientos")
+    End Sub
+
+    Private Sub GoAction()
+        currentPlayer.setCash(currentPlayer.getCash + 200)
+        MsgBox("¡Has pasado por la salida, se te han ingresado 200 € en tu cuenta!")
+    End Sub
+
+    Private Sub TaxAction()
+        currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice())
+        MsgBox(currentPlayer.getName + " ha pagado un impuesto por valor de " + currentSquare.getPrice.ToString)
+        UpdatePlayerStats()
+
+    End Sub
+
+    Private Sub StreetAction()
+        If (IsNothing(currentSquare.owner)) Then
+            btnBuy.Enabled = True
+        Else
+            targetPlayer = currentSquare.owner
+            If currentPlayer.getName = targetPlayer.getName Then
+                checkHouses()
+            Else
+                currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent())
+                targetPlayer.setCash(targetPlayer.getCash + currentSquare.getRent())
+                MsgBox(currentPlayer.getName + " le ha pagado " + currentSquare.getRent.ToString + " a " + targetPlayer.getName)
+            End If
+
+            UpdatePlayerStats()
+        End If
+
+    End Sub
+
+    Private Sub checkSquare(ByVal pos As Integer)
+        Dim st As SquareType
+
+        currentSquare = board.Item(currentPlayer.getPosition)
+        st = currentSquare.getSquareType
+
+        Select Case st
+            Case SquareType.STREET
+                Panel2.Visible = True
+                currentSquare.showInfo(txtInfo)
+                StreetAction()
+            Case SquareType.TAX
+                TaxAction()
+            Case SquareType.JUMP
+                JumpAction()
+            Case SquareType.GO
+                GoAction()
+            Case SquareType.OTHER
+                OtherAction()
+            Case SquareType.JAIL
+                JailAction()
+            Case SquareType.CHEST
+                ChestAction()
+            Case SquareType.LUCKY
+                LuckyAction()
+
+        End Select
+        UpdatePlayerStats()
+
+    End Sub
 #End Region
 
 #Region "Generate"
@@ -388,7 +568,7 @@ Public Class Tablero
     End Sub
 
     Private Sub btnBuy_Click(sender As Object, e As EventArgs) Handles btnBuy.Click
-        currentPlayer.addProperty(currentSquare)
+
         currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice)
         MsgBox("La propiedad " + currentSquare.getName + " ahora es del jugador " + currentPlayer.getName)
         setSquareColor(currentPlayer.getPosition, currentPlayer.getColor)
@@ -416,74 +596,6 @@ Public Class Tablero
 
     End Sub
 
-    Private Sub passTurn(ByVal numP As Integer)
-
-        getCurrentPlayer()
-
-        Select Case numP
-            Case 2
-                If playerTurn = 1 Then
-                    lblPlayer.Text = currentPlayer.getName
-                    currentPlayer.move(RandIndex + 1)
-                    lblP1Pos.Text = currentPlayer.getPosition
-                    checkSquare(currentPlayer.getPosition)
-                    lblP1Cash.Text = currentPlayer.getCash
-                    Panel2.Visible = True
-                End If
-                If playerTurn = 2 Then
-                    lblPlayer.Text = player2.getName
-                    player2.move(RandIndex + 1)
-                    lblP2Pos.Text = player2.getPosition
-                    lblP2Cash.Text = player2.getCash
-                End If
-            Case 3
-                If playerTurn = 1 Then
-                    lblPlayer.Text = player1.getName
-                    player1.move(RandIndex + 1)
-                    lblP1Pos.Text = player1.getPosition
-                    lblP1Cash.Text = player1.getCash
-                End If
-                If playerTurn = 2 Then
-                    lblPlayer.Text = player2.getName
-                    player2.move(RandIndex + 1)
-                    lblP2Pos.Text = player2.getPosition
-                    lblP2Cash.Text = player2.getCash
-                End If
-                If playerTurn = 3 Then
-                    lblPlayer.Text = player3.getName
-                    player3.move(RandIndex + 1)
-                    lblP3Pos.Text = player3.getPosition
-                    lblP3Cash.Text = player3.getCash
-                End If
-            Case 4
-                If playerTurn = 1 Then
-                    lblPlayer.Text = player1.getName
-                    player1.move(RandIndex + 1)
-                    lblP1Pos.Text = player1.getPosition
-                    lblP1Cash.Text = player1.getCash
-                End If
-                If playerTurn = 2 Then
-                    lblPlayer.Text = player2.getName
-                    player2.move(RandIndex + 1)
-                    lblP2Pos.Text = player2.getPosition
-                    lblP2Cash.Text = player2.getCash
-                End If
-                If playerTurn = 3 Then
-                    lblPlayer.Text = player3.getName
-                    player3.move(RandIndex + 1)
-                    lblP3Pos.Text = player3.getPosition
-                    lblP3Cash.Text = player3.getCash
-                End If
-                If playerTurn = 4 Then
-                    lblPlayer.Text = player4.getName
-                    player4.move(RandIndex + 1)
-                    lblP4Pos.Text = player4.getPosition
-                    lblP4Cash.Text = player4.getCash
-                End If
-        End Select
-
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles tmrRoll.Tick
         Dim result As Integer = RandGen.Next(0, 6)
 
@@ -501,8 +613,6 @@ Public Class Tablero
 
         If time = 25 Then
             endTimer()
-            ' passTurn(numPlayers)
-
         End If
     End Sub
 #End Region
@@ -510,4 +620,12 @@ Public Class Tablero
 
     
     
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        RandGen = New Random(Now.Millisecond)
+        currentPlayer.setPosition(7)
+        'currentPlayer.move(10)
+        checkSquare(currentPlayer.getPosition)
+        UpdatePlayerStats()
+
+    End Sub
 End Class

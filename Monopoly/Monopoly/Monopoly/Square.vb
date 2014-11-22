@@ -24,6 +24,23 @@
         Return Me.rent
     End Function
 
+    Public Function getRentInfo(ByVal numHouses As Integer) As Integer
+        Dim rentInfo As Integer
+        Select Case numHouses
+            Case 1
+                rentInfo = price + price * (numHouses * 20 / 100)
+            Case 2
+                rentInfo = price + price * (numHouses * 20 / 100)
+            Case 3
+                rentInfo = price + price * (numHouses * 20 / 100)
+            Case 4
+                rentInfo = price + price * (numHouses * 20 / 100)
+            Case 5
+                rentInfo = price + price * 1.2
+        End Select
+        Return rentInfo
+    End Function
+
     Public Function getSquareType() As SquareType
         Return Me.squareType
     End Function
@@ -36,8 +53,12 @@
         Return name
     End Function
 
+    Public Function getHouseNum() As Integer
+        Return houseNum
+    End Function
+
     Public Sub showInfo(ByVal txt As TextBox)
-        txt.Text = name + "\n Número de casas: \n 1 casa: " + housePrice
+        txt.Text = name & Environment.NewLine & "Alquileres" & Environment.NewLine & "Base: " & getRentInfo(0).ToString & Environment.NewLine & "1 Casa: " & getRentInfo(1).ToString & Environment.NewLine & "2 Casas: " & getRentInfo(2).ToString & Environment.NewLine & "3 Casas: " & getRentInfo(3).ToString & Environment.NewLine & "4 Casas: " & getRentInfo(4).ToString & Environment.NewLine & "Hotel: " & getRentInfo(5).ToString & Environment.NewLine & "PRECIO: " & price
     End Sub
 
 End Class

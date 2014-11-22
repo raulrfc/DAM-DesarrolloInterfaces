@@ -27,8 +27,6 @@ Partial Class Nuevo
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.lbl2 = New System.Windows.Forms.Label()
         Me.clbDifficulty = New System.Windows.Forms.CheckedListBox()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.lblP1 = New System.Windows.Forms.Label()
         Me.lblP2 = New System.Windows.Forms.Label()
         Me.lblP3 = New System.Windows.Forms.Label()
@@ -104,26 +102,6 @@ Partial Class Nuevo
         Me.clbDifficulty.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.clbDifficulty.Size = New System.Drawing.Size(121, 48)
         Me.clbDifficulty.TabIndex = 3
-        '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(322, 247)
-        Me.ShapeContainer1.TabIndex = 5
-        Me.ShapeContainer1.TabStop = False
-        '
-        'LineShape1
-        '
-        Me.LineShape1.BorderColor = System.Drawing.Color.Red
-        Me.LineShape1.BorderWidth = 3
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 148
-        Me.LineShape1.X2 = 148
-        Me.LineShape1.Y1 = 72
-        Me.LineShape1.Y2 = 243
         '
         'lblP1
         '
@@ -325,7 +303,6 @@ Partial Class Nuevo
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbl1)
         Me.Controls.Add(Me.clbNumPlayers)
-        Me.Controls.Add(Me.ShapeContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Nuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -340,8 +317,6 @@ Partial Class Nuevo
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lbl2 As System.Windows.Forms.Label
     Friend WithEvents clbDifficulty As System.Windows.Forms.CheckedListBox
-    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents lblP1 As System.Windows.Forms.Label
     Friend WithEvents lblP2 As System.Windows.Forms.Label
     Friend WithEvents lblP3 As System.Windows.Forms.Label
