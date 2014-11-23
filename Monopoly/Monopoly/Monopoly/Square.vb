@@ -8,11 +8,16 @@
     Public hotelPrice As Integer = 0
     Public owner As Player
     Public squareType As SquareType
+    Public x As Integer
+    Public y As Integer
+    Public numPlayers As Integer = 0
 
-    Sub New(ByVal name As String, ByVal price As Integer, ByVal squareType As SquareType)
+    Sub New(ByVal name As String, ByVal price As Integer, ByVal squareType As SquareType, ByVal x As Integer, ByVal y As Integer)
         Me.name = name
         Me.price = price
         Me.squareType = squareType
+        Me.x = x
+        Me.y = y
     End Sub
 
     Public Function getRent() As Integer
@@ -27,10 +32,12 @@
     Public Function getRentInfo(ByVal numHouses As Integer) As Integer
         Dim rentInfo As Integer
         Select Case numHouses
+            Case 0
+                rentInfo = price
             Case 1
                 rentInfo = price + price * (numHouses * 20 / 100)
             Case 2
-                rentInfo = price + price * (numHouses * 20 / 100)
+                rentInfo = price + price * (numHouses * 20 / 100) 'ffffuck this code
             Case 3
                 rentInfo = price + price * (numHouses * 20 / 100)
             Case 4
@@ -58,7 +65,7 @@
     End Function
 
     Public Sub showInfo(ByVal txt As TextBox)
-        txt.Text = name & Environment.NewLine & "Alquileres" & Environment.NewLine & "Base: " & getRentInfo(0).ToString & Environment.NewLine & "1 Casa: " & getRentInfo(1).ToString & Environment.NewLine & "2 Casas: " & getRentInfo(2).ToString & Environment.NewLine & "3 Casas: " & getRentInfo(3).ToString & Environment.NewLine & "4 Casas: " & getRentInfo(4).ToString & Environment.NewLine & "Hotel: " & getRentInfo(5).ToString & Environment.NewLine & "PRECIO: " & price
+        txt.Text = name & Environment.NewLine & Environment.NewLine & "ALQUILERES" & Environment.NewLine & "Base: " & getRentInfo(0).ToString & Environment.NewLine & "1 Casa: " & getRentInfo(1).ToString & Environment.NewLine & "2 Casas: " & getRentInfo(2).ToString & Environment.NewLine & "3 Casas: " & getRentInfo(3).ToString & Environment.NewLine & "4 Casas: " & getRentInfo(4).ToString & Environment.NewLine & "Hotel: " & getRentInfo(5).ToString & Environment.NewLine & Environment.NewLine & "PRECIO: " & price
     End Sub
 
 End Class

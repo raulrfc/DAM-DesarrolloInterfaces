@@ -20,18 +20,49 @@ Public Class Tablero
     Dim player3 As Player
     Dim player4 As Player
 
+    Dim leavingSquare As Square
     Dim currentSquare As Square
     Dim currentPlayer As Player
     Dim targetPlayer As Player
 #End Region
 
 #Region "Methods"
-   
+    Private Sub movePicLogic(ByVal b As Button)
+        If currentSquare.numPlayers = 0 Then
+            b.Location = New Point(currentSquare.x, currentSquare.y)
+
+        ElseIf currentSquare.numPlayers = 1 Then
+            b.Location = New Point(currentSquare.x, currentSquare.y - 25)
+
+        ElseIf currentSquare.numPlayers = 2 Then
+            b.Location = New Point(currentSquare.x + 25, currentSquare.y)
+
+        ElseIf currentSquare.numPlayers = 3 Then
+            b.Location = New Point(currentSquare.x + 25, currentSquare.y - 25)
+        End If
+    End Sub
+
+    Private Sub movePictures()
+
+        If playerTurn = 1 Then
+            movePicLogic(P1)
+        End If
+        If playerTurn = 2 Then
+            movePicLogic(P2)
+        End If
+        If playerTurn = 3 Then
+            movePicLogic(P3)
+        End If
+        If playerTurn = 4 Then
+            movePicLogic(P4)
+        End If
+
+    End Sub
+
     Private Sub getCurrentPlayer()
         If playerTurn = 1 Then
             currentPlayer = player1
             checkJail()
-
         End If
         If playerTurn = 2 Then
             currentPlayer = player2
@@ -50,44 +81,44 @@ Public Class Tablero
         End If
     End Sub
 
-    Private Sub returnStatsToPlayer()
-        If playerTurn = 1 Then
-            player1 = currentPlayer
-        End If
-        If playerTurn = 2 Then
-            player2 = currentPlayer
-        End If
-        If playerTurn = 3 Then
-            player3 = currentPlayer
-        End If
-        If playerTurn = 4 Then
-            player4 = currentPlayer
-        End If
-    End Sub
+    'Private Sub returnStatsToPlayer()
+    '    If playerTurn = 1 Then
+    '        player1 = currentPlayer
+    '    End If
+    '    If playerTurn = 2 Then
+    '        player2 = currentPlayer
+    '    End If
+    '    If playerTurn = 3 Then
+    '        player3 = currentPlayer
+    '    End If
+    '    If playerTurn = 4 Then
+    '        player4 = currentPlayer
+    '    End If
+    'End Sub
 
     Private Sub UpdatePlayerStats()
 
         If playerTurn = 1 Then
-            lblPlayer.Text = currentPlayer.getName
+            lblPlayer1.Text = currentPlayer.getName
             lblP1Pos.Text = currentPlayer.getPosition
             lblP1Cash.Text = currentPlayer.getCash
         End If
         If playerTurn = 2 Then
-            lblPlayer.Text = currentPlayer.getName
+            lblPlayer2.Text = currentPlayer.getName
             lblP2Pos.Text = currentPlayer.getPosition
             lblP2Cash.Text = currentPlayer.getCash
         End If
         If playerTurn = 3 Then
-            lblPlayer.Text = currentPlayer.getName
+            lblPlayer3.Text = currentPlayer.getName
             lblP3Pos.Text = currentPlayer.getPosition
             lblP3Cash.Text = currentPlayer.getCash
         End If
         If playerTurn = 4 Then
-            lblPlayer.Text = currentPlayer.getName
+            lblPlayer4.Text = currentPlayer.getName
             lblP4Pos.Text = currentPlayer.getPosition
             lblP4Cash.Text = currentPlayer.getCash
         End If
-
+        movePictures()
     End Sub
 
     Private Sub setSquareColor(ByVal pos As Integer, ByVal col As Color)
@@ -143,39 +174,20 @@ Public Class Tablero
         End Select
     End Sub
 
-    Private Sub setPlayerLabel(ByVal numP As Integer)
-        Select Case numP
-            Case 2
-                If playerTurn = 1 Then
-                    lblPlayer.Text = player1.getName
-                End If
-                If playerTurn = 2 Then
-                    lblPlayer.Text = player2.getName
-                End If
-            Case 3
-                If playerTurn = 1 Then
-                    lblPlayer.Text = player1.getName
-                End If
-                If playerTurn = 2 Then
-                    lblPlayer.Text = player2.getName
-                End If
-                If playerTurn = 3 Then
-                    lblPlayer.Text = player3.getName
-                End If
-            Case 4
-                If playerTurn = 1 Then
-                    lblPlayer.Text = player1.getName
-                End If
-                If playerTurn = 2 Then
-                    lblPlayer.Text = player2.getName
-                End If
-                If playerTurn = 3 Then
-                    lblPlayer.Text = player3.getName
-                End If
-                If playerTurn = 4 Then
-                    lblPlayer.Text = player4.getName
-                End If
-        End Select
+    Private Sub setPlayerLabel()
+
+        If playerTurn = 1 Then
+            lblPlayer.Text = player1.getName
+        End If
+        If playerTurn = 2 Then
+            lblPlayer.Text = player2.getName
+        End If
+        If playerTurn = 3 Then
+            lblPlayer.Text = player3.getName
+        End If
+        If playerTurn = 4 Then
+            lblPlayer.Text = player4.getName
+        End If
 
     End Sub
 
@@ -189,12 +201,15 @@ Public Class Tablero
     End Sub
 
     Private Sub endTimer()
+        leavingSquare = board.Item(currentPlayer.getPosition)
+        leavingSquare.numPlayers -= 1
         tmrRoll.Enabled = False
         time = 0
         pbDices.Visible = False
         btnStart.Enabled = True
         currentPlayer.move(RandIndex + 1)
         checkSquare(currentPlayer.getPosition)
+
     End Sub
 
 #End Region
@@ -287,7 +302,12 @@ Public Class Tablero
                 MsgBox(":)")
             Case 9
                 MsgBox("Retrocede 10 casillas")
-                currentPlayer.setPosition(currentPlayer.getPosition - 10)
+                If currentPlayer.getPosition - 10 < 0 Then
+                    currentPlayer.setPosition(37)
+                Else
+                    currentPlayer.setPosition(currentPlayer.getPosition - 10)
+                End If
+
             Case 10
                 MessageBox.Show("Toma la pastilla azul y todo terminará, volverás a donde estabas; toma la pastilla roja y verás hasta donde llega la madriguera del conejo | AZUL(YES) ROJA(NO)", "Suerte", MessageBoxButtons.YesNo)
 
@@ -300,7 +320,8 @@ Public Class Tablero
                 End If
 
         End Select
-
+        currentSquare = board.Item(currentPlayer.getPosition)
+        movePictures()
     End Sub
 
     Private Sub ChestAction()
@@ -388,6 +409,8 @@ Public Class Tablero
                 End If
 
         End Select
+        currentSquare = board.Item(currentPlayer.getPosition)
+        movePictures()
     End Sub
 
     Private Sub OtherAction()
@@ -428,6 +451,7 @@ Public Class Tablero
         Dim st As SquareType
 
         currentSquare = board.Item(currentPlayer.getPosition)
+        
         st = currentSquare.getSquareType
 
         Select Case st
@@ -464,60 +488,78 @@ Public Class Tablero
         Select Case numPlayers
             Case 2
                 player1 = New Player(Cfg.player1.getName, Cfg.player1.getColor, Cfg.player1.getCash)
+                P1.BackColor = player1.getColor
+                P1.Visible = True
                 player2 = New Player(Cfg.player2.getName, Cfg.player2.getColor, Cfg.player2.getCash)
+                P2.BackColor = player2.getColor
+                P2.Visible = True
             Case 3
                 player1 = New Player(Cfg.player1.getName, Cfg.player1.getColor, Cfg.player1.getCash)
+                P1.BackColor = player1.getColor
+                P1.Visible = True
                 player2 = New Player(Cfg.player2.getName, Cfg.player2.getColor, Cfg.player2.getCash)
+                P2.BackColor = player2.getColor
+                P2.Visible = True
                 player3 = New Player(Cfg.player3.getName, Cfg.player3.getColor, Cfg.player3.getCash)
+                P3.BackColor = player3.getColor
+                P3.Visible = True
             Case 4
                 player1 = New Player(Cfg.player1.getName, Cfg.player1.getColor, Cfg.player1.getCash)
+                P1.BackColor = player1.getColor
+                P1.Visible = True
                 player2 = New Player(Cfg.player2.getName, Cfg.player2.getColor, Cfg.player2.getCash)
+                P2.BackColor = player2.getColor
+                P2.Visible = True
                 player3 = New Player(Cfg.player3.getName, Cfg.player3.getColor, Cfg.player3.getCash)
+                P3.BackColor = player3.getColor
+                P3.Visible = True
                 player4 = New Player(Cfg.player4.getName, Cfg.player4.getColor, Cfg.player4.getCash)
+                P4.BackColor = player4.getColor
+                P4.Visible = True
         End Select
     End Sub
 
     Private Sub generateBoard()
-        board.Add(New Square("Salida", 200, SquareType.GO))
-        board.Add(New Square("Sangenis", 50, SquareType.STREET))
-        board.Add(New Square("Caja de comunidad", 0, SquareType.CHEST))
-        board.Add(New Square("Monte Perdido", 50, SquareType.STREET))
-        board.Add(New Square("Impuesto sobre capital", 200, SquareType.TAX))
-        board.Add(New Square("Tranvía Sur", 0, SquareType.JUMP))
-        board.Add(New Square("Ávila", 100, SquareType.STREET))
-        board.Add(New Square("Suerte", 0, SquareType.LUCKY))
-        board.Add(New Square("Lugo", 100, SquareType.STREET))
-        board.Add(New Square("San Juan de la Peña", 120, SquareType.STREET))
-        board.Add(New Square("Cárcel", 0, SquareType.JAIL))
-        board.Add(New Square("Avenida Valencia", 140, SquareType.STREET))
-        board.Add(New Square("Compañía eléctrica", 160, SquareType.STREET))
-        board.Add(New Square("Avenida Navarra", 140, SquareType.STREET))
-        board.Add(New Square("Valle de broto", 160, SquareType.STREET))
-        board.Add(New Square("Tranvía Oeste", 0, SquareType.JUMP))
-        board.Add(New Square("Salvador Allende", 180, SquareType.STREET))
-        board.Add(New Square("Caja de Comunidad", 0, SquareType.CHEST))
-        board.Add(New Square("Miguel Servet", 180, SquareType.STREET))
-        board.Add(New Square("Avenida San José", 200, SquareType.STREET))
-        board.Add(New Square("Parking gratuito", 0, SquareType.OTHER))
-        board.Add(New Square("Avenida Madrid", 220, SquareType.STREET))
-        board.Add(New Square("Suerte", 0, SquareType.LUCKY))
-        board.Add(New Square("Isabel la católica", 220, SquareType.STREET))
-        board.Add(New Square("Avenida América", 240, SquareType.STREET))
-        board.Add(New Square("Tranvía Norte", 0, SquareType.JUMP))
-        board.Add(New Square("Vía Hispanidad", 260, SquareType.STREET))
-        board.Add(New Square("Conde Aranda", 260, SquareType.STREET))
-        board.Add(New Square("Compañía de aguas", 160, SquareType.STREET))
-        board.Add(New Square("Paseo Constitución", 280, SquareType.STREET))
-        board.Add(New Square("Ve a la carcel", 0, SquareType.JUMP))
-        board.Add(New Square("Coso", 300, SquareType.STREET))
-        board.Add(New Square("Paseo Sagasta", 300, SquareType.STREET))
-        board.Add(New Square("Caja de comunidad", 0, SquareType.CHEST))
-        board.Add(New Square("Avenida Ruiz Picasso", 330, SquareType.STREET))
-        board.Add(New Square("Tranvía Este", 0, SquareType.JUMP))
-        board.Add(New Square("Suerte", 0, SquareType.LUCKY))
-        board.Add(New Square("Gran Vía", 350, SquareType.STREET))
-        board.Add(New Square("Impuesto de lujo", 300, SquareType.TAX))
-        board.Add(New Square("Paseo Independencia", 400, SquareType.STREET))
+        board.Add(New Square("Salida", 200, SquareType.GO, 760, 745))
+        board.Add(New Square("Sangenis", 50, SquareType.STREET, 685, 745))
+        board.Add(New Square("Caja de comunidad", 0, SquareType.CHEST, 615, 745))
+        board.Add(New Square("Monte Perdido", 50, SquareType.STREET, 545, 745))
+        board.Add(New Square("Impuesto sobre capital", 200, SquareType.TAX, 475, 745))
+        board.Add(New Square("Tranvía Sur", 0, SquareType.JUMP, 410, 745))
+        board.Add(New Square("Ávila", 100, SquareType.STREET, 340, 745))
+        board.Add(New Square("Suerte", 0, SquareType.LUCKY, 270, 745))
+        board.Add(New Square("Lugo", 100, SquareType.STREET, 195, 745))
+        board.Add(New Square("San Juan de la Peña", 120, SquareType.STREET, 130, 745))
+        board.Add(New Square("Cárcel", 0, SquareType.JAIL, 10, 745))
+        board.Add(New Square("Avenida Valencia", 140, SquareType.STREET, 20, 655))
+        board.Add(New Square("Compañía eléctrica", 160, SquareType.STREET, 20, 590))
+        board.Add(New Square("Avenida Navarra", 140, SquareType.STREET, 20, 530))
+        board.Add(New Square("Valle de broto", 160, SquareType.STREET, 20, 465))
+        board.Add(New Square("Tranvía Oeste", 0, SquareType.JUMP, 20, 400))
+        board.Add(New Square("Salvador Allende", 180, SquareType.STREET, 20, 335))
+        board.Add(New Square("Caja de Comunidad", 0, SquareType.CHEST, 20, 270))
+        board.Add(New Square("Miguel Servet", 180, SquareType.STREET, 20, 205))
+        board.Add(New Square("Avenida San José", 200, SquareType.STREET, 20, 140))
+        board.Add(New Square("Parking gratuito", 0, SquareType.OTHER, 20, 70))
+        board.Add(New Square("Avenida Madrid", 220, SquareType.STREET, 130, 62))
+        board.Add(New Square("Suerte", 0, SquareType.LUCKY, 198, 62))
+        board.Add(New Square("Isabel la católica", 220, SquareType.STREET, 265, 62))
+        board.Add(New Square("Avenida América", 240, SquareType.STREET, 335, 62))
+        board.Add(New Square("Tranvía Norte", 0, SquareType.JUMP, 405, 62))
+        board.Add(New Square("Vía Hispanidad", 260, SquareType.STREET, 475, 62))
+        board.Add(New Square("Conde Aranda", 260, SquareType.STREET, 550, 62))
+        board.Add(New Square("Compañía de aguas", 160, SquareType.STREET, 615, 62))
+        board.Add(New Square("Paseo Constitución", 280, SquareType.STREET, 685, 62))
+        board.Add(New Square("Ve a la carcel", 0, SquareType.JUMP, 755, 62))
+        board.Add(New Square("Coso", 300, SquareType.STREET, 795, 140))
+        board.Add(New Square("Paseo Sagasta", 300, SquareType.STREET, 795, 205))
+        board.Add(New Square("Caja de comunidad", 0, SquareType.CHEST, 795, 270))
+        board.Add(New Square("Avenida Ruiz Picasso", 330, SquareType.STREET, 795, 335))
+        board.Add(New Square("Tranvía Este", 0, SquareType.JUMP, 795, 395))
+        board.Add(New Square("Suerte", 0, SquareType.LUCKY, 795, 465))
+        board.Add(New Square("Gran Vía", 350, SquareType.STREET, 795, 530))
+        board.Add(New Square("Impuesto de lujo", 300, SquareType.TAX, 795, 590))
+        board.Add(New Square("Paseo Independencia", 400, SquareType.STREET, 795, 655))
 
     End Sub
 
@@ -541,11 +583,11 @@ Public Class Tablero
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
 
         If btnStart.Text = "PASAR TURNO" Then
-            returnStatsToPlayer()
+            'returnStatsToPlayer()
             If playerTurn < numPlayers Then
 
                 playerTurn += 1
-                setPlayerLabel(numPlayers)
+                setPlayerLabel()
                 btnRolldice.Enabled = True
                 btnStart.Enabled = False
                 getCurrentPlayer()
@@ -554,7 +596,7 @@ Public Class Tablero
                 turn += 1
                 lblTurn.Text = turn
                 playerTurn = 1
-                setPlayerLabel(numPlayers)
+                setPlayerLabel()
                 btnRolldice.Enabled = True
                 btnStart.Enabled = False
                 getCurrentPlayer()
@@ -613,6 +655,8 @@ Public Class Tablero
 
         If time = 25 Then
             endTimer()
+            currentSquare.numPlayers += 1
+
         End If
     End Sub
 #End Region
@@ -627,5 +671,10 @@ Public Class Tablero
         checkSquare(currentPlayer.getPosition)
         UpdatePlayerStats()
 
+        movePictures()
+        currentSquare.numPlayers += 1
+
     End Sub
+
+   
 End Class
