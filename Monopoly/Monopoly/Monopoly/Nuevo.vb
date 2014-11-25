@@ -172,7 +172,16 @@
         Cfg.player2 = player2
         Cfg.player3 = player3
         Cfg.player4 = player4
+        Tablero.P1.Visible = False
+        Tablero.P2.Visible = False
+        Tablero.P3.Visible = False
+        Tablero.P4.Visible = False
+        player1.setPosition(0)
+        player2.setPosition(0)
+        player3.setPosition(0)
+        player4.setPosition(0)
         Tablero.btnStart.Enabled = True
+        Tablero.btnStart.Text = "EMPEZAR"
         Me.Close()
     End Sub
 #End Region

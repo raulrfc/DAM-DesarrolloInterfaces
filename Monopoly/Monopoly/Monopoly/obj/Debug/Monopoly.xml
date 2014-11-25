@@ -43,6 +43,10 @@ Monopoly
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Monopoly.My.Resources.Resources.DS_DIGIB">
+	<summary>
+  Busca un recurso adaptado de tipo System.Byte[].
+</summary>
 </member><member name="P:Monopoly.My.Resources.Resources.logo">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

@@ -131,6 +131,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property DS_DIGIB() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("DS_DIGIB", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property logo() As System.Drawing.Bitmap

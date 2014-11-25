@@ -1,6 +1,7 @@
 ﻿Imports Monopoly.Player
 Imports Monopoly.Nuevo
 Imports Monopoly.Square
+Imports System.Drawing.Text
 
 
 Public Class Tablero
@@ -30,20 +31,16 @@ Public Class Tablero
     Private Sub movePicLogic(ByVal b As Button)
         If currentSquare.numPlayers = 0 Then
             b.Location = New Point(currentSquare.x, currentSquare.y)
-
         ElseIf currentSquare.numPlayers = 1 Then
             b.Location = New Point(currentSquare.x, currentSquare.y - 25)
-
         ElseIf currentSquare.numPlayers = 2 Then
             b.Location = New Point(currentSquare.x + 25, currentSquare.y)
-
         ElseIf currentSquare.numPlayers = 3 Then
             b.Location = New Point(currentSquare.x + 25, currentSquare.y - 25)
         End If
     End Sub
 
     Private Sub movePictures()
-
         If playerTurn = 1 Then
             movePicLogic(P1)
         End If
@@ -56,7 +53,6 @@ Public Class Tablero
         If playerTurn = 4 Then
             movePicLogic(P4)
         End If
-
     End Sub
 
     Private Sub getCurrentPlayer()
@@ -81,44 +77,39 @@ Public Class Tablero
         End If
     End Sub
 
-    'Private Sub returnStatsToPlayer()
-    '    If playerTurn = 1 Then
-    '        player1 = currentPlayer
-    '    End If
-    '    If playerTurn = 2 Then
-    '        player2 = currentPlayer
-    '    End If
-    '    If playerTurn = 3 Then
-    '        player3 = currentPlayer
-    '    End If
-    '    If playerTurn = 4 Then
-    '        player4 = currentPlayer
-    '    End If
-    'End Sub
-
     Private Sub UpdatePlayerStats()
-
         If playerTurn = 1 Then
+            lblPlayer1.ForeColor = player1.getColor
+            lblP1Pos.ForeColor = player1.getColor
+            lblP1Cash.ForeColor = player1.getColor
             lblPlayer1.Text = currentPlayer.getName
             lblP1Pos.Text = currentPlayer.getPosition
             lblP1Cash.Text = currentPlayer.getCash
         End If
         If playerTurn = 2 Then
+            lblPlayer2.ForeColor = player2.getColor
+            lblP2Pos.ForeColor = player2.getColor
+            lblP2Cash.ForeColor = player2.getColor
             lblPlayer2.Text = currentPlayer.getName
             lblP2Pos.Text = currentPlayer.getPosition
             lblP2Cash.Text = currentPlayer.getCash
         End If
         If playerTurn = 3 Then
+            lblPlayer3.ForeColor = player3.getColor
+            lblP3Pos.ForeColor = player3.getColor
+            lblP3Cash.ForeColor = player3.getColor
             lblPlayer3.Text = currentPlayer.getName
             lblP3Pos.Text = currentPlayer.getPosition
             lblP3Cash.Text = currentPlayer.getCash
         End If
         If playerTurn = 4 Then
+            lblPlayer4.ForeColor = player4.getColor
+            lblP4Pos.ForeColor = player4.getColor
+            lblP4Cash.ForeColor = player4.getColor
             lblPlayer4.Text = currentPlayer.getName
             lblP4Pos.Text = currentPlayer.getPosition
             lblP4Cash.Text = currentPlayer.getCash
         End If
-        movePictures()
     End Sub
 
     Private Sub setSquareColor(ByVal pos As Integer, ByVal col As Color)
@@ -221,11 +212,18 @@ Public Class Tablero
         jailedPlayer = currentPlayer
         If currentPlayer.getJail = True Then
             If currentPlayer.getJailTime < 2 Then
-                playerTurn += 1
+                movePictures()
+                If playerTurn < numPlayers Then
+                    playerTurn += 1
+                Else
+                    playerTurn = 1
+                End If
+                setPlayerLabel()
                 currentPlayer.setJailTime()
                 getCurrentPlayer()
                 UpdatePlayerStats()
-                MsgBox(jailedPlayer.getName + "está en la cárcel, es el turno del jugador " + currentPlayer.getName)
+                MsgBox(jailedPlayer.getName + " está en la cárcel, es el turno del jugador " + currentPlayer.getName)
+                btnRolldice.Enabled = True
             Else
                 MsgBox(jailedPlayer.getName + "ha salido de la cárcel")
                 currentPlayer.setJailTime()
@@ -285,6 +283,7 @@ Public Class Tablero
             Case 5
                 MsgBox("Ve a la carcel, eres un delincuente")
                 currentPlayer.setPosition(10)
+                currentPlayer.setJail(True)
             Case 6
                 MessageBox.Show("Te has encontrado un cofre, ¿quieres abrirlo?", "Suerte", MessageBoxButtons.YesNo)
 
@@ -451,7 +450,7 @@ Public Class Tablero
         Dim st As SquareType
 
         currentSquare = board.Item(currentPlayer.getPosition)
-        
+
         st = currentSquare.getSquareType
 
         Select Case st
@@ -484,7 +483,7 @@ Public Class Tablero
 
     Private Sub generatePlayers()
         numPlayers = Cfg.numPlayers
-
+      
         Select Case numPlayers
             Case 2
                 player1 = New Player(Cfg.player1.getName, Cfg.player1.getColor, Cfg.player1.getCash)
@@ -583,7 +582,6 @@ Public Class Tablero
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
 
         If btnStart.Text = "PASAR TURNO" Then
-            'returnStatsToPlayer()
             If playerTurn < numPlayers Then
 
                 playerTurn += 1
@@ -606,11 +604,23 @@ Public Class Tablero
         If btnStart.Text = "EMPEZAR" Then
             generateStartLayout()
             getCurrentPlayer()
+
+            
+
+            currentSquare = board.Item(0)
+            currentSquare.numPlayers = 0
+            lblTurn.Text = 1
+            movePicLogic(P1)
+            currentSquare.numPlayers += 1
+            movePicLogic(P2)
+            currentSquare.numPlayers += 1
+            movePicLogic(P3)
+            currentSquare.numPlayers += 1
+            movePicLogic(P4)
         End If
     End Sub
 
     Private Sub btnBuy_Click(sender As Object, e As EventArgs) Handles btnBuy.Click
-
         currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice)
         MsgBox("La propiedad " + currentSquare.getName + " ahora es del jugador " + currentPlayer.getName)
         setSquareColor(currentPlayer.getPosition, currentPlayer.getColor)
@@ -625,7 +635,7 @@ Public Class Tablero
     End Sub
 
 #End Region
-    
+
 #Region "General"
     Private Sub Tablero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         arrImages(0) = My.Resources.dice1
@@ -636,6 +646,14 @@ Public Class Tablero
         arrImages(5) = My.Resources.dice6
         pbDices.SizeMode = PictureBoxSizeMode.StretchImage
 
+
+    End Sub
+
+    Private Sub main_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.D AndAlso e.Modifiers = Keys.Control) Then
+
+            Panel4.Visible = True
+        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles tmrRoll.Tick
@@ -655,26 +673,61 @@ Public Class Tablero
 
         If time = 25 Then
             endTimer()
+            movePictures()
             currentSquare.numPlayers += 1
 
         End If
     End Sub
 #End Region
-  
 
-    
-    
+
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RandGen = New Random(Now.Millisecond)
         currentPlayer.setPosition(7)
-        'currentPlayer.move(10)
         checkSquare(currentPlayer.getPosition)
         UpdatePlayerStats()
-
         movePictures()
         currentSquare.numPlayers += 1
 
     End Sub
 
-   
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        RandGen = New Random(Now.Millisecond)
+        currentPlayer.setPosition(2)
+        checkSquare(currentPlayer.getPosition)
+        UpdatePlayerStats()
+        movePictures()
+        currentSquare.numPlayers += 1
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        RandGen = New Random(Now.Millisecond)
+        currentPlayer.setPosition(5)
+        checkSquare(currentPlayer.getPosition)
+        UpdatePlayerStats()
+        movePictures()
+        currentSquare.numPlayers += 1
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        RandGen = New Random(Now.Millisecond)
+        currentPlayer.setPosition(3)
+        checkSquare(currentPlayer.getPosition)
+        UpdatePlayerStats()
+        movePictures()
+        currentSquare.numPlayers += 1
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        RandGen = New Random(Now.Millisecond)
+        currentPlayer.setPosition(10)
+
+        checkSquare(currentPlayer.getPosition)
+        
+
+        currentSquare.numPlayers += 1
+    End Sub
 End Class

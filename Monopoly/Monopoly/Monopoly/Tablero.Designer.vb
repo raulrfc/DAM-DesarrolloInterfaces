@@ -64,7 +64,6 @@ Partial Class Tablero
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblPlayer = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblP4Cash = New System.Windows.Forms.Label()
         Me.lblP4Pos = New System.Windows.Forms.Label()
         Me.lblPlayer4 = New System.Windows.Forms.Label()
@@ -80,8 +79,7 @@ Partial Class Tablero
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnRolldice = New System.Windows.Forms.Button()
         Me.Logo = New System.Windows.Forms.PictureBox()
-        Me.pbDices = New System.Windows.Forms.PictureBox()
-        Me.pbTablero = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.tmrRoll = New System.Windows.Forms.Timer(Me.components)
         Me.txtInfo = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -91,12 +89,21 @@ Partial Class Tablero
         Me.P2 = New System.Windows.Forms.Button()
         Me.P4 = New System.Windows.Forms.Button()
         Me.P3 = New System.Windows.Forms.Button()
+        Me.pbDices = New System.Windows.Forms.PictureBox()
+        Me.pbTablero = New System.Windows.Forms.PictureBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.pbDices, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbTablero, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -135,7 +142,6 @@ Partial Class Tablero
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.btnNuevo)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.lblP4Cash)
         Me.Panel1.Controls.Add(Me.lblP4Pos)
         Me.Panel1.Controls.Add(Me.lblPlayer4)
@@ -629,15 +635,6 @@ Partial Class Tablero
         Me.lblPlayer.TabIndex = 10
         Me.lblPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(122, 428)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 23
-        Me.Button1.Text = "TEST "
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'lblP4Cash
         '
         Me.lblP4Cash.AutoSize = True
@@ -802,28 +799,17 @@ Partial Class Tablero
         Me.Logo.TabIndex = 0
         Me.Logo.TabStop = False
         '
-        'pbDices
+        'Button1
         '
-        Me.pbDices.InitialImage = Global.Monopoly.My.Resources.Resources.dice6
-        Me.pbDices.Location = New System.Drawing.Point(384, 322)
-        Me.pbDices.Name = "pbDices"
-        Me.pbDices.Size = New System.Drawing.Size(100, 97)
-        Me.pbDices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbDices.TabIndex = 2
-        Me.pbDices.TabStop = False
-        Me.pbDices.Visible = False
-        '
-        'pbTablero
-        '
-        Me.pbTablero.BackColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.pbTablero.Image = Global.Monopoly.My.Resources.Resources.Tablero
-        Me.pbTablero.Location = New System.Drawing.Point(2, 0)
-        Me.pbTablero.Margin = New System.Windows.Forms.Padding(0)
-        Me.pbTablero.Name = "pbTablero"
-        Me.pbTablero.Size = New System.Drawing.Size(863, 793)
-        Me.pbTablero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbTablero.TabIndex = 0
-        Me.pbTablero.TabStop = False
+        Me.Button1.FlatAppearance.BorderSize = 3
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(0, 26)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 29)
+        Me.Button1.TabIndex = 23
+        Me.Button1.Text = "SUERTE"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'tmrRoll
         '
@@ -832,7 +818,8 @@ Partial Class Tablero
         'txtInfo
         '
         Me.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtInfo.Font = New System.Drawing.Font("Eras Demi ITC", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtInfo.Enabled = False
+        Me.txtInfo.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtInfo.ForeColor = System.Drawing.Color.Red
         Me.txtInfo.Location = New System.Drawing.Point(3, 3)
         Me.txtInfo.Margin = New System.Windows.Forms.Padding(0)
@@ -926,11 +913,108 @@ Partial Class Tablero
         Me.P3.UseVisualStyleBackColor = True
         Me.P3.Visible = False
         '
+        'pbDices
+        '
+        Me.pbDices.InitialImage = Global.Monopoly.My.Resources.Resources.dice6
+        Me.pbDices.Location = New System.Drawing.Point(384, 322)
+        Me.pbDices.Name = "pbDices"
+        Me.pbDices.Size = New System.Drawing.Size(100, 97)
+        Me.pbDices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbDices.TabIndex = 2
+        Me.pbDices.TabStop = False
+        Me.pbDices.Visible = False
+        '
+        'pbTablero
+        '
+        Me.pbTablero.BackColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.pbTablero.Image = Global.Monopoly.My.Resources.Resources.Tablero
+        Me.pbTablero.Location = New System.Drawing.Point(2, 0)
+        Me.pbTablero.Margin = New System.Windows.Forms.Padding(0)
+        Me.pbTablero.Name = "pbTablero"
+        Me.pbTablero.Size = New System.Drawing.Size(863, 793)
+        Me.pbTablero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbTablero.TabIndex = 0
+        Me.pbTablero.TabStop = False
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Button9)
+        Me.Panel4.Controls.Add(Me.Button8)
+        Me.Panel4.Controls.Add(Me.Button7)
+        Me.Panel4.Controls.Add(Me.Button6)
+        Me.Panel4.Controls.Add(Me.Label7)
+        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Location = New System.Drawing.Point(153, 549)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(153, 115)
+        Me.Panel4.TabIndex = 8
+        Me.Panel4.Visible = False
+        '
+        'Button9
+        '
+        Me.Button9.FlatAppearance.BorderSize = 3
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Location = New System.Drawing.Point(38, 84)
+        Me.Button9.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(75, 29)
+        Me.Button9.TabIndex = 28
+        Me.Button9.Text = "CARCEL"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.FlatAppearance.BorderSize = 3
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Location = New System.Drawing.Point(75, 55)
+        Me.Button8.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(75, 29)
+        Me.Button8.TabIndex = 27
+        Me.Button8.Text = "CALLE"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.FlatAppearance.BorderSize = 3
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Location = New System.Drawing.Point(75, 26)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 29)
+        Me.Button7.TabIndex = 26
+        Me.Button7.Text = "TRANVIA"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.FlatAppearance.BorderSize = 3
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Location = New System.Drawing.Point(0, 55)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 29)
+        Me.Button6.TabIndex = 25
+        Me.Button6.Text = "CHEST"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(3, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(150, 23)
+        Me.Label7.TabIndex = 24
+        Me.Label7.Text = "DEVELOPER PANEL"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Tablero
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1154, 794)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(1156, 794)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.P3)
         Me.Controls.Add(Me.P4)
         Me.Controls.Add(Me.P2)
@@ -940,6 +1024,7 @@ Partial Class Tablero
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pbTablero)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Name = "Tablero"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Monopoly"
@@ -948,10 +1033,11 @@ Partial Class Tablero
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbDices, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbTablero, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.pbDices, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbTablero, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1022,5 +1108,11 @@ Partial Class Tablero
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 
 End Class

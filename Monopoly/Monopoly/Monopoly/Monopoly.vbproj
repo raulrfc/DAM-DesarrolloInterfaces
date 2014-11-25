@@ -152,6 +152,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DS-DIGIB.TTF" />
     <None Include="Resources\Tablero.png" />
   </ItemGroup>
   <ItemGroup>
