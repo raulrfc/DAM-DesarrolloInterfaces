@@ -28,6 +28,95 @@ Public Class Tablero
 #End Region
 
 #Region "Methods"
+    Private Sub FreeAllSquares()
+        For i As Integer = 0 To 39
+
+            setSquareColor(i, Color.White)
+
+        Next
+
+    End Sub
+
+    Private Sub FreePlayerSquares()
+        For i As Integer = 0 To 39
+            If (IsNothing(board.Item(i).owner)) Then
+            Else
+                If board.Item(i).owner.getName = currentPlayer.getName Then
+                    setSquareColor(i, Color.White)
+                End If
+            End If
+        Next
+
+    End Sub
+
+    Private Sub ResetStats()
+        lblPlayer1.Text = ""
+        lblP1Pos.Text = ""
+        lblP1Cash.Text = ""
+        lblPlayer2.Text = ""
+        lblP2Pos.Text = ""
+        lblP2Cash.Text = ""
+        lblPlayer3.Text = ""
+        lblP3Pos.Text = ""
+        lblP3Cash.Text = ""
+        lblPlayer4.Text = ""
+        lblP4Pos.Text = ""
+        lblP4Cash.Text = ""
+        playerTurn = 1
+        turn = 1
+        FreeAllSquares()
+
+    End Sub
+
+    Private Sub checkWinner()
+        Dim eliminated As Integer = 0
+
+        Select Case numPlayers
+            Case 2
+                If player1.getBankrupt = True Then
+                    eliminated += 1
+                ElseIf player2.getBankrupt = True Then
+                    eliminated += 1
+                End If
+            Case 3
+                If player1.getBankrupt = True Then
+                    eliminated += 1
+                ElseIf player2.getBankrupt = True Then
+                    eliminated += 1
+                ElseIf player3.getBankrupt = True Then
+                    eliminated += 1
+                End If
+            Case 4
+                If player1.getBankrupt = True Then
+                    eliminated += 1
+                ElseIf player2.getBankrupt = True Then
+                    eliminated += 1
+                ElseIf player3.getBankrupt = True Then
+                    eliminated += 1
+                ElseIf player4.getBankrupt = True Then
+                    eliminated += 1
+                End If
+        End Select
+
+
+        If eliminated = numPlayers - 1 Then
+            MsgBox("¡¡VICTORIA!!")
+        End If
+    End Sub
+
+    Private Sub checkBankrupt()
+        If currentPlayer.getBankrupt = True Then
+            If playerTurn < numPlayers Then
+                playerTurn += 1
+            Else
+                playerTurn = 1
+            End If
+            setPlayerLabel()
+            getCurrentPlayer()
+        End If
+
+    End Sub
+
     Private Sub movePicLogic(ByVal b As Button)
         If currentSquare.numPlayers = 0 Then
             b.Location = New Point(currentSquare.x, currentSquare.y)
@@ -58,23 +147,18 @@ Public Class Tablero
     Private Sub getCurrentPlayer()
         If playerTurn = 1 Then
             currentPlayer = player1
-            checkJail()
         End If
         If playerTurn = 2 Then
             currentPlayer = player2
-            checkJail()
-
         End If
         If playerTurn = 3 Then
             currentPlayer = player3
-            checkJail()
-
         End If
         If playerTurn = 4 Then
             currentPlayer = player4
-            checkJail()
-
         End If
+        checkBankrupt()
+        checkJail()
     End Sub
 
     Private Sub UpdatePlayerStats()
@@ -199,7 +283,7 @@ Public Class Tablero
         pbDices.Visible = False
         btnStart.Enabled = True
         currentPlayer.move(RandIndex + 1)
-        checkSquare(currentPlayer.getPosition)
+        currentSquare = board.Item(currentPlayer.getPosition)
 
     End Sub
 
@@ -211,26 +295,26 @@ Public Class Tablero
         Dim jailedPlayer As Player
         jailedPlayer = currentPlayer
         If currentPlayer.getJail = True Then
-            If currentPlayer.getJailTime < 2 Then
-                movePictures()
+            If currentPlayer.getJailTime <= 2 Then
+                UpdatePlayerStats()
+                currentPlayer.setJailTime()
                 If playerTurn < numPlayers Then
                     playerTurn += 1
                 Else
                     playerTurn = 1
                 End If
                 setPlayerLabel()
-                currentPlayer.setJailTime()
                 getCurrentPlayer()
-                UpdatePlayerStats()
                 MsgBox(jailedPlayer.getName + " está en la cárcel, es el turno del jugador " + currentPlayer.getName)
                 btnRolldice.Enabled = True
+                btnStart.Enabled = False
             Else
                 MsgBox(jailedPlayer.getName + "ha salido de la cárcel")
                 currentPlayer.setJailTime()
                 currentPlayer.setJail(False)
             End If
 
-        End If
+            End If
     End Sub
 
     Private Sub checkHouses()
@@ -239,23 +323,24 @@ Public Class Tablero
         If currentSquare.houseNum < 4 Then
             result = MessageBox.Show("Tienes " + currentSquare.houseNum.ToString + " casas, ¿quieres comprar una casa por " + currentSquare.getRent.ToString() + "€ ?", currentSquare.getName, MessageBoxButtons.YesNo)
             If result = Windows.Forms.DialogResult.Yes Then
-                currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent)
-                currentSquare.houseNum += 1
-            Else
-
+                If currentPlayer.getCash > currentSquare.getRent Then
+                    currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent)
+                    currentSquare.houseNum += 1
+                Else
+                    MsgBox("No tienes dinero suficiente")
+                End If             
             End If
         ElseIf currentSquare.houseNum = 4 Then
             result = MessageBox.Show("Tienes " + currentSquare.houseNum.ToString + " casas, ¿quieres comprar un hotel por " + currentSquare.getRent.ToString() + "€ ?", currentSquare.getName, MessageBoxButtons.YesNo)
             If result = Windows.Forms.DialogResult.Yes Then
-                currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent)
-                currentSquare.houseNum += 1
-                currentSquare.hotel = True
-            Else
-
+                If currentPlayer.getCash > currentSquare.getRent Then
+                    currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent)
+                    currentSquare.houseNum += 1
+                    currentSquare.hotel = True
+                Else
+                    MsgBox("No tienes dinero suficiente")
+                End If
             End If
-        Else
-
-
         End If
 
     End Sub
@@ -264,7 +349,7 @@ Public Class Tablero
         Dim result As DialogResult
         Dim luck As Integer
 
-        luck = RandGen.Next(1, 10)
+        luck = RandGen.Next(1, 11)
 
         Select Case luck
 
@@ -314,19 +399,24 @@ Public Class Tablero
                     MsgBox("Tu mundo permanece inalterado")
                 Else
                     Dim x As Integer = RandGen.Next(100, 500)
-                    MsgBox("Has visto lugares que nadie más conoce, en tu viaje has amasado una fortuna de " + x + " €")
+                    MsgBox("Has visto lugares que nadie más conoce, en tu viaje has amasado una fortuna de " + x.ToString + " €")
                     currentPlayer.setCash(currentPlayer.getCash + x)
                 End If
 
         End Select
         currentSquare = board.Item(currentPlayer.getPosition)
         movePictures()
+        If currentPlayer.getCash < 0 Then
+            currentPlayer.setBankrupt(True)
+            MsgBox("Te has arruinado, has sido eliminado del juego")
+            FreePlayerSquares()
+        End If
     End Sub
 
     Private Sub ChestAction()
         Dim chest As Integer
 
-        chest = RandGen.Next(1, 10)
+        chest = RandGen.Next(1, 11)
 
         Select Case chest
 
@@ -361,6 +451,11 @@ Public Class Tablero
 
         End Select
 
+        If currentPlayer.getCash < 0 Then
+            currentPlayer.setBankrupt(True)
+            MsgBox("Te has arruinado, has sido eliminado del juego")
+            FreePlayerSquares()
+        End If
     End Sub
 
     Private Sub JailAction()
@@ -401,6 +496,7 @@ Public Class Tablero
             Case 30
                 MsgBox("A la carcel")
                 currentPlayer.move(20)
+                checkSquare(currentPlayer.getPosition)
             Case 35
                 result = MessageBox.Show("Este tranvía te llevará hasta la parada del tranvía Oeste, quieres cogerlo?", "Parada del tranvía Este", MessageBoxButtons.YesNo)
                 If result = Windows.Forms.DialogResult.Yes Then
@@ -425,6 +521,11 @@ Public Class Tablero
         currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice())
         MsgBox(currentPlayer.getName + " ha pagado un impuesto por valor de " + currentSquare.getPrice.ToString)
         UpdatePlayerStats()
+        If currentPlayer.getCash < 0 Then
+            currentPlayer.setBankrupt(True)
+            MsgBox("Te has arruinado, has sido eliminado del juego")
+            FreePlayerSquares()
+        End If
 
     End Sub
 
@@ -439,6 +540,11 @@ Public Class Tablero
                 currentPlayer.setCash(currentPlayer.getCash - currentSquare.getRent())
                 targetPlayer.setCash(targetPlayer.getCash + currentSquare.getRent())
                 MsgBox(currentPlayer.getName + " le ha pagado " + currentSquare.getRent.ToString + " a " + targetPlayer.getName)
+                If currentPlayer.getCash < 0 Then
+                    currentPlayer.setBankrupt(True)
+                    MsgBox("Te has arruinado, has sido eliminado del juego")
+                    FreePlayerSquares()
+                End If
             End If
 
             UpdatePlayerStats()
@@ -450,7 +556,6 @@ Public Class Tablero
         Dim st As SquareType
 
         currentSquare = board.Item(currentPlayer.getPosition)
-
         st = currentSquare.getSquareType
 
         Select Case st
@@ -474,9 +579,12 @@ Public Class Tablero
                 LuckyAction()
 
         End Select
-        UpdatePlayerStats()
+        If st <> SquareType.JAIL Then
+            UpdatePlayerStats()
+        End If
 
     End Sub
+
 #End Region
 
 #Region "Generate"
@@ -582,6 +690,8 @@ Public Class Tablero
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
 
         If btnStart.Text = "PASAR TURNO" Then
+            Panel2.Visible = False
+            checkWinner()
             If playerTurn < numPlayers Then
 
                 playerTurn += 1
@@ -590,7 +700,6 @@ Public Class Tablero
                 btnStart.Enabled = False
                 getCurrentPlayer()
             Else
-
                 turn += 1
                 lblTurn.Text = turn
                 playerTurn = 1
@@ -602,11 +711,9 @@ Public Class Tablero
         End If
 
         If btnStart.Text = "EMPEZAR" Then
+            ResetStats()
             generateStartLayout()
             getCurrentPlayer()
-
-            
-
             currentSquare = board.Item(0)
             currentSquare.numPlayers = 0
             lblTurn.Text = 1
@@ -621,13 +728,18 @@ Public Class Tablero
     End Sub
 
     Private Sub btnBuy_Click(sender As Object, e As EventArgs) Handles btnBuy.Click
-        currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice)
-        MsgBox("La propiedad " + currentSquare.getName + " ahora es del jugador " + currentPlayer.getName)
-        setSquareColor(currentPlayer.getPosition, currentPlayer.getColor)
-        currentSquare.owner = currentPlayer
-        btnBuy.Enabled = False
-        Panel2.Visible = False
-        UpdatePlayerStats()
+        If currentPlayer.getCash > currentSquare.getPrice Then
+            currentPlayer.setCash(currentPlayer.getCash - currentSquare.getPrice)
+            MsgBox("La propiedad " + currentSquare.getName + " ahora es del jugador " + currentPlayer.getName)
+            setSquareColor(currentPlayer.getPosition, currentPlayer.getColor)
+            currentSquare.owner = currentPlayer
+            btnBuy.Enabled = False
+            Panel2.Visible = False
+            UpdatePlayerStats()
+        Else
+            MsgBox("No tienes dinero suficiente")
+        End If
+       
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -645,15 +757,6 @@ Public Class Tablero
         arrImages(4) = My.Resources.dice5
         arrImages(5) = My.Resources.dice6
         pbDices.SizeMode = PictureBoxSizeMode.StretchImage
-
-
-    End Sub
-
-    Private Sub main_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If (e.KeyCode = Keys.D AndAlso e.Modifiers = Keys.Control) Then
-
-            Panel4.Visible = True
-        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles tmrRoll.Tick
@@ -674,14 +777,21 @@ Public Class Tablero
         If time = 25 Then
             endTimer()
             movePictures()
+            checkSquare(currentPlayer.getPosition)
             currentSquare.numPlayers += 1
 
         End If
     End Sub
 #End Region
 
+#Region "Developer Panel"
 
+    Private Sub main_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.D AndAlso e.Modifiers = Keys.Control) Then
 
+            Panel4.Visible = True
+        End If
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RandGen = New Random(Now.Millisecond)
@@ -724,10 +834,22 @@ Public Class Tablero
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         RandGen = New Random(Now.Millisecond)
         currentPlayer.setPosition(10)
-
+        btnStart.Enabled = True
         checkSquare(currentPlayer.getPosition)
-        
+        movePictures()
 
         currentSquare.numPlayers += 1
     End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        currentPlayer.setCash(currentPlayer.getCash - 10000)
+        UpdatePlayerStats()
+        currentPlayer.setBankrupt(True)
+        MsgBox("Te has arruinado, has sido eliminado del juego")
+        FreePlayerSquares()
+        checkBankrupt()
+    End Sub
+#End Region
+
+    
 End Class

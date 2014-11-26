@@ -174,7 +174,7 @@ Partial Class Nuevo
         '
         'btnColorP2
         '
-        Me.btnColorP2.BackColor = System.Drawing.Color.LawnGreen
+        Me.btnColorP2.BackColor = System.Drawing.Color.ForestGreen
         Me.btnColorP2.Enabled = False
         Me.btnColorP2.FlatAppearance.BorderSize = 2
         Me.btnColorP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -216,7 +216,7 @@ Partial Class Nuevo
         '
         'btnColorP3
         '
-        Me.btnColorP3.BackColor = System.Drawing.Color.Yellow
+        Me.btnColorP3.BackColor = System.Drawing.Color.Orange
         Me.btnColorP3.Enabled = False
         Me.btnColorP3.FlatAppearance.BorderSize = 2
         Me.btnColorP3.FlatStyle = System.Windows.Forms.FlatStyle.Flat

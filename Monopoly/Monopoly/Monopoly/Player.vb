@@ -7,6 +7,7 @@ Public Class Player
     Dim position As Integer = 0
     Dim jail As Boolean = False
     Dim jailTime As Integer = 0
+    Dim bankrupt As Boolean = False
 
     Sub New(ByVal name As String, ByVal color As Color, ByVal cash As Integer)
         Me.name = name
@@ -27,6 +28,9 @@ Public Class Player
         End If
 
     End Sub
+    Public Function getBankrupt()
+        Return Me.bankrupt
+    End Function
     Public Function getJailTime()
         Return Me.jailTime
     End Function
@@ -57,7 +61,7 @@ Public Class Player
         Me.jail = jail
     End Sub
     Public Sub setJailTime()
-        If jailTime < 2 Then
+        If jailTime <= 2 Then
             Me.jailTime += 1
         Else
             Me.jailTime = 0
@@ -66,6 +70,9 @@ Public Class Player
     End Sub
     Public Sub setPosition(ByVal pos As Integer)
         Me.position = pos
+    End Sub
+    Public Sub setBankrupt(ByVal status As Boolean)
+        Me.bankrupt = status
     End Sub
 
 End Class

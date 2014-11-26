@@ -101,6 +101,7 @@
 #End Region
 
 #Region "Players"
+
     Private Sub p1Enabled(ByVal value As Boolean)
         lblP1.Enabled = value
         TextBox1.Enabled = value
@@ -164,6 +165,7 @@
         player3 = New Player(TextBox3.Text, btnColorP3.BackColor, cash)
         player4 = New Player(TextBox4.Text, btnColorP4.BackColor, cash)
     End Sub
+
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         setPlayers()
         Cfg.numPlayers = numPlayers

@@ -97,6 +97,7 @@ Partial Class Tablero
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -938,6 +939,7 @@ Partial Class Tablero
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.Button10)
         Me.Panel4.Controls.Add(Me.Button9)
         Me.Panel4.Controls.Add(Me.Button8)
         Me.Panel4.Controls.Add(Me.Button7)
@@ -954,7 +956,7 @@ Partial Class Tablero
         '
         Me.Button9.FlatAppearance.BorderSize = 3
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Location = New System.Drawing.Point(38, 84)
+        Me.Button9.Location = New System.Drawing.Point(0, 84)
         Me.Button9.Margin = New System.Windows.Forms.Padding(0)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(75, 29)
@@ -1007,6 +1009,18 @@ Partial Class Tablero
         Me.Label7.TabIndex = 24
         Me.Label7.Text = "DEVELOPER PANEL"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Button10
+        '
+        Me.Button10.FlatAppearance.BorderSize = 3
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Location = New System.Drawing.Point(75, 84)
+        Me.Button10.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(75, 29)
+        Me.Button10.TabIndex = 29
+        Me.Button10.Text = "RUINA"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'Tablero
         '
@@ -1114,5 +1128,6 @@ Partial Class Tablero
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Button10 As System.Windows.Forms.Button
 
 End Class

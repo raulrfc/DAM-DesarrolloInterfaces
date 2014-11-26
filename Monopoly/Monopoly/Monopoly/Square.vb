@@ -37,7 +37,7 @@
             Case 1
                 rentInfo = price + price * (numHouses * 20 / 100)
             Case 2
-                rentInfo = price + price * (numHouses * 20 / 100) 'ffffuck this code
+                rentInfo = price + price * (numHouses * 20 / 100)
             Case 3
                 rentInfo = price + price * (numHouses * 20 / 100)
             Case 4
