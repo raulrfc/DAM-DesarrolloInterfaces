@@ -13,6 +13,11 @@
 
     End Sub
 
+    Public Function getMes(ByVal MesNum As Integer)
+        Dim meses() As String = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"}
+        Return meses(MesNum - 1)
+    End Function
+
     Private Sub MostrarDatos(e As EventosDataSet.EventosRow, ByVal dias As Integer, ByVal anyos As Integer, ByRef image As Image)
         Select Case pos
             Case 1
@@ -25,7 +30,7 @@
                 Else
                     lbl1Info.Text = e.Descripcion & " cumplió años hace " & (dias * -1) & " días"
                     lbl1Nac.Text = "Nació el " & e.Fecha
-                    lbl1Anyos.Text = "Cumple " & anyos & " años"
+                    lbl1Anyos.Text = "Cumplió " & anyos & " años"
                 End If
                 
             Case 2
@@ -38,7 +43,7 @@
                 Else
                     lbl2Info.Text = e.Descripcion & " cumplió años hace " & (dias * -1) & " días"
                     lbl2Nac.Text = "Nació el " & e.Fecha
-                    lbl2Anyos.Text = "Cumple " & anyos & " años"
+                    lbl2Anyos.Text = "Cumplió " & anyos & " años"
                 End If
             Case 3
                 Panel3.Visible = True
@@ -50,7 +55,7 @@
                 Else
                     lbl3Info.Text = e.Descripcion & " cumplió años hace " & (dias * -1) & " días"
                     lbl3Nac.Text = "Nació el " & e.Fecha
-                    lbl3Anyos.Text = "Cumple " & anyos & " años"
+                    lbl3Anyos.Text = "Cumplió " & anyos & " años"
                 End If
             Case 4
                 Panel4.Visible = True
@@ -62,7 +67,7 @@
                 Else
                     lbl4Info.Text = e.Descripcion & " cumplió años hace " & (dias * -1) & " días"
                     lbl4Nac.Text = "Nació el " & e.Fecha
-                    lbl4Anyos.Text = "Cumple " & anyos & " años"
+                    lbl4Anyos.Text = "Cumplió " & anyos & " años"
                 End If
             Case 5
                 Panel5.Visible = True
@@ -74,7 +79,7 @@
                 Else
                     lbl5Info.Text = e.Descripcion & " cumplió años hace " & (dias * -1) & " días"
                     lbl5Nac.Text = "Nació el " & e.Fecha
-                    lbl5Anyos.Text = "Cumple " & anyos & " años"
+                    lbl5Anyos.Text = "Cumplió " & anyos & " años"
                 End If
             Case 6
                 Panel6.Visible = True
@@ -86,7 +91,7 @@
                 Else
                     lbl6Info.Text = e.Descripcion & " cumplió años hace " & (dias * -1) & " días"
                     lbl6Nac.Text = "Nació el " & e.Fecha
-                    lbl6Anyos.Text = "Cumple " & anyos & " años"
+                    lbl6Anyos.Text = "Cumplió " & anyos & " años"
                 End If
         End Select
         pos += 1
@@ -120,16 +125,6 @@
         Next
     End Sub
 
-    Public Function getMes(ByVal MesNum As Integer)
-        Dim meses() As String = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"}
-        Return meses(MesNum - 1)
-    End Function
-
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        Me.Close()
-
-    End Sub
-
     Private Sub EventosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.EventosBindingSource.EndEdit()
@@ -140,10 +135,12 @@
     Dim newPoint As New System.Drawing.Point()
     Dim a As Integer
     Dim b As Integer
+
     Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
         a = Control.MousePosition.X - Me.Location.X
         b = Control.MousePosition.Y - Me.Location.Y
     End Sub
+
     Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
         If e.Button = MouseButtons.Left Then
             newPoint = Control.MousePosition
@@ -151,5 +148,9 @@
             newPoint.Y = newPoint.Y - (b)
             Me.Location = newPoint
         End If
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

@@ -69,10 +69,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventosDataSet.Designer.vb">
+    <Compile Include="EventosDataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EventosDataSet.xsd</DependentUpon>
+      <DependentUpon>EventosDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -110,16 +110,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="EventosDataSet.xsc">
-      <DependentUpon>EventosDataSet.xsd</DependentUpon>
+    <None Include="EventosDataSet2.xsc">
+      <DependentUpon>EventosDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="EventosDataSet.xsd">
+    <None Include="EventosDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EventosDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>EventosDataSet2.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="EventosDataSet.xss">
-      <DependentUpon>EventosDataSet.xsd</DependentUpon>
+    <None Include="EventosDataSet2.xss">
+      <DependentUpon>EventosDataSet2.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -153,10 +153,12 @@
     <None Include="Resources\Corkboard_Wood_Cork_Composite_by_Enchantedgal_Stock.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\title.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Eventos.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\title.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

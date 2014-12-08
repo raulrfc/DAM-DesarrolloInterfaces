@@ -410,7 +410,7 @@ Partial Class Reminder
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Reminder.My.Resources.Resources.Corkboard_Wood_Cork_Composite_by_Enchantedgal_Stock
-        Me.ClientSize = New System.Drawing.Size(914, 686)
+        Me.ClientSize = New System.Drawing.Size(923, 696)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
