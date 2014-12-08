@@ -63,26 +63,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property background() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("background", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property backgroundCorcho() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("backgroundCorcho", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property Corkboard_Wood_Cork_Composite_by_Enchantedgal_Stock() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Corkboard_Wood_Cork_Composite_by_Enchantedgal_Stock", resourceCulture)
@@ -116,16 +96,6 @@ Namespace My.Resources
         Friend ReadOnly Property postitVerde() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("postitVerde", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property textura_corcho8() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("textura-corcho8", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

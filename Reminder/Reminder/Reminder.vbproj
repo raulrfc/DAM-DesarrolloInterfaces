@@ -132,15 +132,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\backgroundCorcho.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\textura-corcho8.JPG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\PostitAmarillo.png" />
   </ItemGroup>
   <ItemGroup>
