@@ -1,0 +1,20 @@
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\obj\Debug\Reminder.Reminder.resources
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\obj\Debug\Reminder.Resources.resources
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\obj\Debug\Reminder.vbproj.GenerateResource.Cache
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\bin\Debug\Reminder.exe
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\bin\Debug\Reminder.pdb
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\bin\Debug\Reminder.xml
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\obj\Debug\Reminder.exe
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\obj\Debug\Reminder.xml
+C:\Users\Niar\AppData\Local\Temporary Projects\Reminder\obj\Debug\Reminder.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\obj\Debug\Reminder.exe
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\obj\Debug\Reminder.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\obj\Debug\Reminder.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\bin\Debug\Eventos.accdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\bin\Debug\Reminder.exe.config
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\bin\Debug\Reminder.exe
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\bin\Debug\Reminder.pdb
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\bin\Debug\Reminder.xml
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\obj\Debug\Reminder.Reminder.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\obj\Debug\Reminder.Resources.resources
+C:\Users\Niar\Documents\GitHub\DAM-DesarrolloInterfaces\Reminder\Reminder\obj\Debug\Reminder.vbproj.GenerateResource.Cache
